@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="images/iconn.png" sizes="50x50">
+	<title>Soups</title>
+	<script src="javascriptShowMoreorLess.js"></script>
+	<style>
+		*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body{
+		background-color: white;
+	}
+	
+	header{
+		/*position: fixed;*/
+		background-color: rgba(240, 209, 204,0.6);
+		width: 100%;
+		height: 50px;
+	}
+	header nav{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: absolute;
+		right: 5px;
+		width: 60%;
+		height: 50px;
+	}
+	button, input{
+		background-color: inherit;
+		border-radius: 20px;
+		border: 1px solid grey;
+		padding: 10px;
+		cursor: pointer;
+	}
+	h1{
+		margin: 0 auto 10px auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: white;
+		background-color: #C9A1E3;
+		width: 100%;
+		height: 40px;
+	}
+	a:link{
+		color: #701D40;
+		text-decoration: none;
+		font-size: 20px;
+	}
+	a:hover{
+		color: #db84db;
+	}
+
+	#showmore{
+		display: none;
+	}
+	
+	#leftmenu{
+		margin: 30px 0 20px 30px;
+		display: flex;
+		justify-content: space-between;
+		width: 90%;
+		height: 410px;
+	}
+
+	#sidebar{
+		width: 200px;
+		height: 400px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border: 2px solid #C9A1E3;
+		padding: 10px;
+	}
+	#iframe{
+		display: inline-block;
+		height: 450px;
+	}
+
+	.hold{
+		display: flex;
+		justify-content: space-between;
+		height: 400px;
+		margin: 80px 10px 30px 10px;
+		padding: 15px;
+		background-color: #dcb9ed;
+		border: 3px solid #701D40;
+		
+	}
+
+	.image{
+		width: 25%;
+		border: 3px solid #694C70;
+		background-color: white;
+		text-align: center;
+		font-weight: bold;
+		font-size: 20px;
+		position: relative;
+	}
+	.ingredient{
+		width: 25%;
+		border: 3px solid #694C70;
+		padding: 15px;
+		background-color: white;
+		overflow-y: auto;
+	}
+	.receipt{
+		width: 40%;
+		border: 3px solid #694C70;
+		padding: 15px;
+		background-color: white;
+		font-style: italic;
+		overflow: auto;
+	}
+
+	#pitiimg{
+		background-image: url("images/piti1.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#pitiimg:hover{
+		background-image: url("images/piti2.png");
+	}
+
+	#bozbashimg{
+		background-image: url("images/bozbash1.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#bozbashimg:hover{
+		background-image: url("images/bozbash2.png");
+	}
+
+	#dovgaimg{
+		background-image: url("images/dovga1.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#dovgaimg:hover{
+		background-image: url("images/dovga2.png");
+	}
+
+	#dushbaraimg{
+		background-image: url("images/dushbara2.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#dushbaraimg:hover{
+		background-image: url("images/dushbara1.png");
+	}
+
+	#arishtaimg{
+		background-image: url("images/arishta2.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#arishtaimg:hover{
+		background-image: url("images/arishta1.png");
+	}
+
+	#khashimg{
+		background-image: url("images/khash2.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#khashimg:hover{
+		background-image: url("images/khash1.png");
+	}
+
+
+	footer{
+		background-color: #F0D1CC;
+		width: 100%;
+		height: 300px;
+	}
+	#container{
+		display: flex;
+		justify-content: space-between;
+		width: 70%;
+		margin: 0 auto;
+	}
+	ul{
+	color: #701D40;
+	font-weight: bold;
+	font-size: 25px;
+	}
+	
+	li{
+		padding-top: 10px;
+		font-size: 20px;
+		list-style: none;
+		font-weight: 10;
+	}
+
+	#copy{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 10px;
+		color: #5A4D5E;
+	}
+	.fllw{
+		display: inline-block;
+		border-radius: 24%;
+		width: 30px;
+		height: 30px;
+		border: none;
+	}
+	.fllw:hover{
+		border-radius: 50%;
+	}
+	</style>
+</head>
+<body>
+	<header id="header">
+		<nav>
+
+			<form>
+			<label for="site_search">Search in the site</label>
+			<input type="search" id="site_search" name="srch" aria-label="Search in the site">
+			<button>Search</button>
+			<input type="submit" value="Submit">
+			</form>
+
+			<a href="index.html">Home</a>
+			<a href="Contact_Us.html">Contact us</a>
+			<a href="About_Us.html">About us</a>
+		</nav>
+	</header>
+
+	<section id="leftmenu">
+		<nav><h1>Contents</h1>
+			<ul id="sidebar">
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</nav>
+	
+
+	<div id="iframe"><img width="880px" height="450px" src="images/soupsback.jpg" title="Piti"></div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="piti">Piti</div>
+			<div id="pitiimg"></div>
+		</div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Mutton (boneless and fatty)</li>
+				<li>Potatoes</li>
+				<li>Pea</li>
+				<li>Onions</li>
+				<li>Tomato paste</li>
+				<li>Cherry</li>
+				<li>Yellow ginger</li>
+				<li>Salt</li> 
+				<li>Pepper</li>
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Put the peas in cold water and cook incompletely after a few hours. Wash the meat, put it in a pot and pour water. The water should be up to the meat. Put a head of peeled onion in a pot and cook at medium temperature. Gather the meat, the broth is a transparent omelet. Cook the lamb for about an hour and add salt. Check the cooking of the meat with a fork, remove the onion after cooking. Onions are thrown in order to attract the smell of mutton. Peel a squash, grate it and add some carrots, peas and cherries. When cooking potatoes, pour half a tablespoon of tomato paste or finely chopped tomatoes. Cook for 5-10 minutes. When serving ready-made piti, lavash or bread, thinly sliced onions, greens or pickles are also served.
+		</div>
+	</section>
+
+	<section class="hold">
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>The meat is washed, poured water over it and boiled until cooked (about 2 hours). When the meat boils, the foam that accumulates on it must be collected with a spoon. Peas are washed, poured water over them and boiled until cooked. After cooking the meat, add cooked peas, potatoes cut into 2 parts, 1 onion (onion is not chopped), butter, salt, carrot, cherry acid. Cook over low heat until potatoes are soft. When the dish is ready, the onion is removed from the inside and sprinkled with dried mint when served.
+		</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Mutton</li>
+				<li>Onions</li>
+				<li>Peas</li>
+				<li>Butter</li>
+				<li>Cherry acid</li>
+				<li>Mint</li>
+				<li>Yellow ginger</li>
+				<li>Salt</li>
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="bozbash">Bozbash</div>
+			<div id="bozbashimg"></div>
+		</div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="dovga">Dovga</div>
+			<div id="dovgaimg"></div>
+		</div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Yogurt</li>
+				<li>Egg</li>
+				<li>Flour</li>
+				<li>Rice</li>
+				<li>Dill</li> 
+				<li>Coriander</li>
+				<li>Mint</li>
+				<li>Spinach</li>
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Pour the yogurt into the pot and mix, leaving no flakes. Then add the washed rice, eggs, flour and mix again. Put the pot on the stove and stir constantly. After boiling, chop the pre-washed greens into small pieces. After cooking the rice, add the herbs and cook for another 5 minutes. You can put the dovga on the table, hot or cold, on a deep plate, bowl or glass.
+		</div>
+	</section>
+
+	<section class="hold">
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Broth, minced soft mutton with onion, coriander, and spices are prepared. Knead a solid dough with flour, water and eggs and spread it to a thickness of 1 mm. Then the spread dough is cut into squares measuring 3 × 3 cm. Put 4-5 g of minced meat in the middle of each square and wrap it. The cooking time of the dushbara is 5 minutes.</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Mutton</li>
+				<li>Wheat flour</li>
+				<li>Eggs</li>
+				<li>Onions</li>
+				<li>Broth</li>
+				<li>Vinegar</li>
+				<span id="points">...</span><span id="showmore">
+				<li>Dried coriander</li>
+				<li>Dried mint</li>
+				<li>Pepper</li>
+				<li>Salt</li>
+				</span>
+				<button onclick="showMoreorLess()" id="showMoreorLessButton">Show more</button>
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="dushbara">Dushbara</div>
+			<div id="dushbaraimg"></div>
+		</div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="arishta">Arishta Soup</div>
+			<div id="arishtaimg"></div>
+		</div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Noodles</li>
+				<li>Water or Meat broth</li>
+				<li>Tomato paste</li>
+				<li>Flour</li> 
+				<li>Onion</li>
+				<li>Salt</li>
+				<li>Mint</li>
+				<li>Lemon Juice to taste</li>
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>We make the noodles in the way we know. Finely chop the onion and fry in butter. Add flour and mix. Add tomato paste. When everything is well mixed, add hot water (broth). Add the noodles as they boil. When the noodles are cooked, finish the bottom and add salt and mint. Eaten by squeezing a lemon.
+		</div>
+	</section>
+
+	<section class="hold">
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Clean the beef legs and cook in the oven. Divide the cleaned legs into 2 - 3 parts. Cut between the nails and cut off the excess in the middle. Then wash the feet thoroughly with warm water. Put the legs in a large pot and pour water over it. Water should cover the legs 15-20 cm. Place the pot on a low heat and stir occasionally. Then, when the water starts to boil, drain the water and wash your feet again. Pour clean water into the pot, add the washed feet and cook on a low heat overnight (until the meat separates from the bones). Add onion to the cooked eggplant. Towards the end of cooking, add salt, pepper and leaf. Serve ready-made khash with vinegar-garlic. You can also use lavash, tandir bread and various pickles during the meal.</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Beef legs</li>
+				<li>Water</li>
+				<li>Onion</li>
+				<li>Salt</li>
+				<li>Pepper</li>
+				<li>Leaf</li>
+				<li>Garlic</li>
+				
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="khash">Khash Soup</div>
+			<div id="khashimg"></div>
+		</div>
+	</section>
+
+<footer>
+		<div id="container">
+		<div>
+			<ul>General Info
+			<li><a href="Contact_Us.html">Contact us</a></li>
+			<li><a href="About_Us.html">About us</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Contents
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Follow us
+			<li><a href="https://instagram.com/secret_ingredient_20?igshid=1dow9o2zwl1vb"><img class="fllw" src="images/instaLogo.jpg">Instagram</a></li>
+			<li><a href="https://youtube.com/channel/UC9MN9gSSIg8BMfui8kY37_g"><img class="fllw" src="images/youtubeLogo.png">Youtube</a></li>
+		</ul>
+		</div>
+	</div>
+<div id="copy">All rights are reserved by "The Secret Ingredient" Team &copy; 2020</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!--meta name="viewport" content="width=device-width initial-scale=1"-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Patua+One&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" type="image/png" href="images/iconn.png" sizes="50x50">
+	<title>Home</title>
+</head>
+<script src="javascriptShowMoreorLess.js">
+	function changeBodyBg(color){
+        document.body.style.background = color;
+    }
+</script>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	/*body{
+		background-color: rgb(240, 238, 197);
+	}*/
+	header{
+		position: fixed;
+		display: flex;
+		justify-content: space-between;
+		background-color: rgba(240, 209, 204,0.6);
+		width: 100%;
+		height: 50px;
+	}
+	header>img{
+		margin-left: 5px;
+	}
+	nav{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: fixed;
+		right: 5px;
+		width: 35%;
+		height: 50px;
+	}
+	a:link{
+		color: #701D40;
+		text-decoration: none;
+		font-size: 20px;
+	}
+	a:hover{
+		color: #db84db;
+	}
+	#showmore{
+		display: none;
+	}
+
+	button, input{
+		background-color: inherit;
+		border-radius: 20px;
+		border: 1px solid grey;
+		padding: 10px;
+		cursor: pointer;
+	}
+	
+	.cnt {
+  		position: relative;
+  		display: inline-block;
+	}
+
+	.dropmenu {
+		background-color: transparent;
+  		color: #701D40;
+  		padding: 15px;
+  		border: none;
+  		font-family: serif;
+  		font-size: 20px;
+	}
+
+
+	.dropdown {
+ 		display: none;
+  		position: absolute;
+  		background-color:  rgba(240, 209, 204);
+  		min-width: 200px;
+  		z-index: 1;
+	}
+
+	.dropdown a {
+  		padding: 10px;
+  		display: block;
+	}
+
+	.dropdown a:hover {
+		background-color: #F4C9E1;
+	}
+
+	.cnt:hover .dropdown {
+		display: block;
+	}
+
+	#atf{
+		height: 100vh;
+		background-image: url("https://img.delicious.com.au/28nERLEz/del/2019/11/azerbaijan-food-118337-1.jpg");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: center;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-family: 'Monoton', cursive;
+		font-size: 50px;
+		color: white;
+		text-shadow: 2px 2px 1px grey;
+		transition: all 1s linear;
+	}
+
+		#atf:hover{
+		background-image: url("https://theculturetrip.com/wp-content/uploads/2018/01/shutterstock_638583610.jpg");
+		background-size: cover;
+	}
+
+	h1{
+		padding: 10px;
+		text-align: center;
+		font-family: 'Lobster', cursive;
+		font-family: 'Patua One', cursive;
+		color: #9477A7;
+		text-shadow: 2px 2px 5px gray;
+		font-size: 50px;
+	}
+	article{
+		width: 80%;
+	}
+
+	#general{
+		background-color: #DB7B61;
+		opacity: 0.8;
+		width: 600px;
+		height: 300px;
+		margin:0 0 20px 20px;
+		overflow: auto;
+		border-radius: 30px;
+		text-align: center;
+		color: white;
+	}
+	#place{
+		background-color: #b382b5;
+		opacity: 0.8;
+		width: 600px;
+		height: 300px;
+		overflow: auto;
+		border-radius: 30px;
+		text-align: center;
+		color: white;
+	}
+	#flexend{
+		display: flex;
+		flex-flow: row wrap;
+		height: 300px;
+		justify-content: flex-end;
+		margin:0 0 20px 20px;
+	}
+	#cuisine{
+		background-color: #CF7B74;
+		opacity: 0.8;
+		width: 600px;
+		height: 300px;
+		margin:0 0 20px 20px;
+		overflow: auto;
+		border-radius: 30px;
+		text-align: center;
+		color: white;
+
+	}
+
+	#style{
+		width: 1200px;
+		height: 2px;
+		margin: 20px auto;
+		background-color: grey;
+	}
+	.content{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-bottom: 20px; 
+	}
+
+	section img{
+		width: 200px;
+		height: 200px;
+		margin: 30px 30px 0 30px;
+		border-radius: 20px;
+	}
+	section img:hover{
+		width: 180px;
+		height: 180px;
+	}
+	h4{
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		border-radius: 50px;
+		color: white;
+		background-color: #C9A1E3;
+		width: 200px;
+		height: 50px;
+	}
+
+	h2{
+font-family: 'Lobster', cursive;
+color: whitesmoke;
+	}
+
+	footer{
+		background-color: #F0D1CC;
+		width: 100%;
+		height: 300px;
+	}
+	#container{
+		display: flex;
+		justify-content: space-between;
+		width: 70%;
+		margin: 0 auto;
+	}
+	ul{
+	color: #701D40;
+	font-weight: bold;
+	font-size: 25px;
+	}
+	
+	li{
+		padding-top: 10px;
+		font-size: 20px;
+		list-style: none;
+		font-weight: 10;
+	}
+
+	#copy{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 10px;
+		color: #5A4D5E;
+	}
+	.fllw{
+		display: inline-block;
+		border-radius: 24%;
+		width: 30px;
+		height: 30px;
+		border: none;
+	}
+	.fllw:hover{
+		border-radius: 50%;
+	}
+	
+</style>
+<body>
+	<header id="header">
+		<img src="images/icon.png" width="50px" height="50px">
+		<nav>
+			<a href="index.html">Home</a>
+			<div class="cnt">
+  <button class="dropmenu">Content
+  	<i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown">
+    <ul>
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Chefs</a></li>
+			<li><a href="Restaurants.html">Restaurants</a></li>
+		</ul>
+  </div>
+</div>
+<a href="Contact_Us.html">Contact us</a>
+			<a href="About_Us.html">About us</a>
+		</nav>
+	</header>
+	<section>
+		<div id="atf">The Secret Ingredient</div>
+		<h1>Azerbaijan <form onsubmit="return validate(this.form)"><input type="color" name="bcolor" value="#e5a8f0" oninput="document.getElementsByTagName('BODY')[0].style.backgroundColor=bcolor.value"></form></h1>
+		<article id="general" onMouseOver="this.style.backgroundColor='#F7947E'" onMouseOut="this.style.backgroundColor='#DB7B61'">
+			<h2>General Info</h2>
+		Azerbaijan is one of the ancient countries in the modern world. But where does Azerbaijan located? Azerbaijan located in the North Caucuses and the largest country in that area. The capital of Azerbaijan is Baku which is also the biggest city in Caucuses. Azerbaijan was the part of former USSR but after 1991 Azerbaijan separated from USSR and been independent country since. Azerbaijan straggled for years because of Nagorno-Karabakh conflict. Which was occupied by Armenian troops between 1992-94. Azerbaijan lost nearly 20% of his lands during that war. But in 2020 2nd Nagorno-Karabakh conflict changed totally. This time Azerbaijan was the dominant side of this conflict and in terms of 44days took back all the occupied territories back. So on 8th of November the ancient and well-known Azerbaijan city Shusha has been taken back and for that victory that day will always be one of the memorial days of modern Azerbaijan. Every year we will celebrate that day as a Victory day. 
+		<input type="button" name="detailedinfo" value="More Detailed Info" onclick="newWindow = window.open('http://anl.az/el/Kitab/2018/02/cd/i-44365.pdf', 'myTarget', 'toolbar=no, status=no, left=200px, top=150px, width=400px, height=300px');">
+		</article>
+<div id="flexend">
+<article id="place" onMouseOver="this.style.backgroundColor='#F5B2F7'" onMouseOut="this.style.backgroundColor='#b382b5'">
+			<h2>Place</h2>
+	Azerbaijan is also known for its geographical situation. The landscape of our country is complicated. Nearly 50% of the land is surrounded by mountains but on the other half there are several types of forest and woods either. This territory always been occupied by several countries alongside with The Ottomans. So for its wealth and situation Azerbaijan always been an essential land for those countries. Especially for those wars there are always been many castles built. For Example in Baku u can see Shirvanshahlar Palace which is absolutely phenomenal art piece. Besides that there is famous Maiden Tower (Qiz Qalasi) and its history lays back to 12th century. And you can also see some other historical monuments in other cities of Azerbaijan. Also Azerbaijan is famous for its mud volcanos , nearly 80% of the mud volcanos are in Gobustan, which is not so for from capital. Also we can mention city Fizuli . The famous Azix cave is in that city . Which is also been occupied by Armenian troops in 1st Karabakh war.
+	<input type="button" name="detailedinfo" value="More Detailed Info" onclick="newWindow = window.open('https://www.thecrazytourist.com/15-best-places-visit-azerbaijan/', 'myTarget', 'toolbar=no, status=no, left=200px, top=150px, width=400px, height=300px');">
+		</article></div>
+
+		<article id="cuisine" onMouseOver="this.style.backgroundColor='#F08F86'" onMouseOut="this.style.backgroundColor='#CF7B74'">
+			<h2>Cuisine</h2>
+	Azerbaijan's national cuisine is closer to Middle Eastern cuisine due to the taste and preparation of the dishes, as well as adding a dark spice and flavor additives. Contemporary Azerbaijan cuisine retains traditional methods of preparation of dishes while incorporating modern cooking requirements and preparations.
+	Azerbaijani dishes have traditionally been cooked with copper utensils in copper cookware. Copper bowls and plates are still commonly used as serving dishes.
+	Azerbaijani cuisine is full of different types of greens and vegetables such as aubergine, tomato, sweet pepper, spinach, cabbage, onion, sorrel, beet, radish, cucumber, green beans. Rice and products made from flour are widely used in national cuisine. It is famous for vegetables and greens used seasonally in the dishes. Fresh herbs, including mint, coriander, dill, basil, parsley, tarragon, leek, chive, thyme, marjoram, green onion, and watercress are very popular and often accompany main dishes. The majority of national dishes are<span id="points">...</span><span id="showmore"> prepared of lamb, beef and poultry meat. Dishes prepared of minced meat are more prevalent. The sea, lakes and rivers of the Republic of Azerbaijan are abundant with different fish species, particularly white sturgeon. Sturgeon fish is widely used in preparation of national dishes. The Caspian Sea is home to many edible species of fish, including the sturgeon, Caspian salmon, kutum, sardines, grey mullet, and others. Black caviar from the Caspian Sea is one of Azerbaijan's best known delicacies well sought after in other parts of the world, including former Soviet countries.
+	One of the most reputed dishes of Azerbaijani cuisine is plov from saffron-covered rice, served with various herbs and greens, a combination totally distinct from those found in Uzbek plovs. Azerbaijani cuisine includes more than 40 different plov recipes. Other second courses include a wide variety of kebabs and shashlik, including lamb, beef, chicken, duck and fish (baliq) kebabs. Sturgeon, a common fish, is normally skewered and grilled as a shashlik, being served with a tart pomegranate sauce called narsharab. Dried fruits and walnuts are used in many dishes. The traditional condiments are salt, black pepper, sumac, and especially saffron, which is grown domestically on the Absheron Peninsula. The third courses include soups, of which there are more than 30 types in Azerbaijani national cuisine. These include kufta bozbash, piti prepared of meat and dovga, ovdukh, dogramach, bolva prepared of greens and yoghurt. Some soups are served in national or interesting and unusually-shaped bowls.</span>
+	<button onclick="showMoreorLess()" id="showMoreorLessButton">Show more</button>
+	
+
+		</article>
+	</section>
+
+	<div id="style"></div>
+	<h1>Content</h1>
+	<section class="content">
+			<div><a href="Main_Meals.html"><img src="images/main.jpg"></a>
+			<a href="Main_Meals.html"><h4>Main Meals</h4></a></div>
+			<div><a href="Soups.html"><img src="images/soup.jpg"></a>
+			<a href="Soups.html"><h4>Soup</h4></a></div>
+			<div><a href="Desserts.html"><img src="images/dessert.jpg"></a>
+			<a href="Desserts.html"><h4>Dessert</h4></a></div>
+			<div><a href="Jams.html"><img src="images/jam.jpg"></a>
+			<a href="Jams.html"><h4>Jam</h4></a></div>
+	</section>
+
+	<section class="content">
+		<div><a href="Chefs.html"><img src="images/chef.jpg"></a>
+			<a href="Chefs.html"><h4>Popular Chefs of Azerbaijan</h4></a></div>
+			<div><a href="Restaurants.html"><img src="images/restoran.jpg"></a>
+			<a href="Restaurants.html"><h4>Popular National Restaurants</h4></a></div>
+	</section>
+
+
+	<footer>
+		<div id="container">
+		<div>
+			<ul>General Info
+			<li><a href="Contact_Us.html">Contact us</a></li>
+			<li><a href="About_Us.html">About us</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Contents
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Follow us
+			<li><a href="https://instagram.com/secret_ingredient_20?igshid=1dow9o2zwl1vb"><img class="fllw" src="images/instaLogo.jpg">Instagram</a></li>
+			<li><a href="https://youtube.com/channel/UC9MN9gSSIg8BMfui8kY37_g"><img class="fllw" src="images/youtubeLogo.png">Youtube</a></li>
+		</ul>
+		</div>
+	</div>
+<div id="copy">All rights are reserved by "The Secret Ingredient" Team &copy; 2020</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<!--meta name="viewport" content="width=device-width initial-scale=1"-->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Mystery+Quest&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Kavivanar&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Inline+Text:wght@700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="icon" type="image/png" href="images/iconn.png" sizes="50x50">
+	<title>About us</title>
+</head>
+<style>
+	*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	/*body{
+		background-color: #CFB2DA;
+	}*/
+	header{
+		position: fixed;
+		background-color: rgba(240, 209, 204,0.6);
+		width: 100%;
+		height: 50px;
+	}
+	
+	nav{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: fixed;
+		right: 0;
+		width: 35%;
+		height: 50px;
+	}
+
+	.cnt {
+  		position: relative;
+  		display: inline-block;
+	}
+
+	.dropmenu {
+		background-color: transparent;
+  		color: #551a8b;
+  		padding: 15px;
+  		border: none;
+  		font-family: serif;
+  		font-size: 20px;
+	}
+
+
+	.dropdown {
+ 		display: none;
+  		position: absolute;
+  		background-color:  rgba(240, 209, 204);
+  		min-width: 200px;
+  		z-index: 1;
+	}
+
+	.dropdown a {
+  		padding: 10px;
+  		display: block;
+	}
+
+	.dropdown a:hover {
+		background-color: #F4C9E1;
+	}
+
+	.cnt:hover .dropdown {
+		display: block;
+	}
+
+	#atf{
+		height: 100vh;
+		background-image: url("https://blogs.tees.ac.uk/lteonline/files/2019/02/teamssocial-noresize.png");
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-attachment: fixed;
+		background-position: center;
+		text-align: left;
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		font-size: 20px;
+		color: black;
+		transition: all 1s linear;
+		padding: 10px;
+	}
+	a:link{
+		color: #701D40;
+		text-decoration: none;
+		font-size: 20px;
+	}
+	a:hover{
+		color: #db84db;
+	}
+	
+	h1{
+		font-family: 'Monoton', cursive;
+		font-size: 50px;
+		color: #D3ED68;
+		font-weight: normal;
+	}
+	#abtsite{
+		width: 300px;
+		color: #d6aae3;
+		font-weight: bold;
+		font-family: 'Kavivanar', cursive;
+	}
+
+	.team{
+		display: inline-block;
+		width: 250px;
+		height: 500px;
+		margin: 80px;
+		box-shadow: 20px 20px 20px grey;
+		background-color: #d8c3de;
+		overflow: auto;
+	}
+	img{
+		display: block;
+		border-radius: 50%;
+		width: 100px;
+		height: 100px;
+		margin: 0 auto;
+		border: 3px solid gray;
+	}
+	
+	section > p{
+		margin: 10px;
+	}
+	h2{
+		text-align: center;
+		font-size: 70px;
+		margin: 10px;
+		color: #3f055c;
+		text-shadow: 2px 2px 5px gray;
+		font-family: 'Big Shoulders Inline Text', cursive;
+		font-weight: normal;
+		animation-delay: 1s;
+		animation-duration: 5s;
+		animation-name: toleft;
+	}
+
+	@keyframes toleft{
+		from{
+			margin-left: 100%;
+			width: 100%;
+		}
+
+		75%{
+			font-size: 100px;
+			margin-left: 0%;
+		}
+
+		to{
+			margin-left: 0%;
+			width: 100%;
+		}
+	}
+
+	h4{
+		text-align: center;
+		font-size: 25px;
+		font-family: 'Homemade Apple', cursive;
+	}
+	.account{
+		font-size: 20px;
+		font-style: italic;
+		margin: 5px;
+	}
+	#holder{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	footer{
+		background-color: #F0D1CC;
+		width: 100%;
+		height: 300px;
+	}
+	#container{
+		display: flex;
+		justify-content: space-between;
+		width: 70%;
+		margin: 0 auto;
+	}
+	ul{
+	color: #701D40;
+	font-weight: bold;
+	font-size: 25px;
+	}
+	
+	li{
+		padding-top: 10px;
+		font-size: 20px;
+		list-style: none;
+		font-weight: 10;
+	}
+
+	#copy{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 10px;
+		color: #5A4D5E;
+	}
+	.fllw{
+		display: inline-block;
+		border-radius: 24%;
+		width: 30px;
+		height: 30px;
+		border: none;
+	}
+	.fllw:hover{
+		border-radius: 50%;
+	}
+</style>
+<body>
+	<main>
+<!--Nav Bar from Home Page-->
+		<header id="header">
+		<nav>
+			<a href="index.html">Home</a>
+			<div class="cnt">
+  <button class="dropmenu">Content
+  	<i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown">
+    <ul>
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Chefs</a></li>
+			<li><a href="Restaurants.html">Restaurants</a></li>
+		</ul>
+  </div>
+</div>
+<a href="Contact_Us.html">Contact us</a>
+			<a href="About_Us.html">About us</a>
+		</nav>
+	</header>
+
+	
+		<div id="atf">
+			<p id="abtsite">This Website is created in 20 December, 2020 as a group project for one of the course we take in university.Purpose of this website is to introduce tasty Azerbaijan meals and share the recipies to make people enable to easily find and design their tables with these delicious food :). Our target is mostly foreign people, that is why, content is written in English. By using this site, you will investigate different tastes such as main meals, desserts, jam and many more. Nuş olsun! Enjoy your meal! Bon Apetit!</p></div>
+		
+
+		<h2>Meet The Team</h2>
+
+		<section id="holder">
+		<section id="khayala" class="team" onMouseOver="this.style.backgroundColor='#d9bad7'" onMouseOut="this.style.backgroundColor='#d8c3de'">
+			<img src="images/Khayala_Avatar.png">
+			<h4>Khayala Haziyeva</h4>
+			<p class="account">
+				 Hello, dear user of our site! Nice to see you here and I hope will enjoy every minute you spend in our website! Let me introduce myself. I am junior student at ADA university majoring Information Technologies. Graphic design and front-end development are among my personal interests. If you want to get more information about me visit my LinkeIn profile from <a href="https://www.linkedin.com/in/khayala-haziyeva-4711a11a2/" target="_blank"> here</a> or <a href="mailto:khaziyeva4672@ada.edu.az?">email me</a></p>
+
+		</section>
+
+		<section id="rafiga" class="team" onMouseOver="this.style.backgroundColor='#d9bad7'" onMouseOut="this.style.backgroundColor='#d8c3de'">
+			<img src="images/Rafiga_Avatar.jpg">
+			<h4>Rafiga Bashirova</h4>
+			<p class="account">Another team member that also helped to created our website is me. I am a senior student that will graduate from the ADA University in 2021. My favorite fields in Information Technology are front-end development and network administration. If you want to know my work and education experience, feel free to reach me from <a href="https://www.linkedin.com/in/rafigabashirova/" target="_blank"> my profile in linkeIn</a> or <a href="mailto:rbashirova2021@ada.edu.az?">email me</a></p>
+			
+		</section>
+
+		<section id="emil" class="team" onMouseOver="this.style.backgroundColor='#d9bad7'" onMouseOut="this.style.backgroundColor='#d8c3de'">
+			<img src="images/Emil_Avatar.jpg">
+			<h4>Emil Aliyev</h4>
+			<p class="account">I am Emil Aliyev, 3rd year student at ADA university and my major is Information Technologies. Me and my teammates are pleased that we created this site because our purpose is to introduce our national meals to the world and I hope we are successful and will be. Thank you for visiting our site. If you need to ask something, feel free to contact me via<a href="https://www.linkedin.com/in/khayala-haziyeva-4711a11a2/" target="_blank"> LinkedIn</a> or <a href="mailto:ealiyev5197@ada.edu.az?">email me</a></p>
+		
+		</section>
+	</section>
+	</main>
+
+	<footer>
+		<div id="container">
+		<div>
+			<ul>General Info
+			<li><a href="About_Us.html">About us</a></li>
+			<li><a href="Contact_Us.html">Contact us</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Contents
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</div>
+
+		<div>
+		<ul>Follow us
+			<li><a href="https://instagram.com/secret_ingredient_20?igshid=1dow9o2zwl1vb"><img class="fllw" src="images/instaLogo.jpg">Instagram</a></li>
+			<li><a href="https://youtube.com/channel/UC9MN9gSSIg8BMfui8kY37_g"><img class="fllw" src="images/youtubeLogo.png">Youtube</a></li>
+		</ul>
+		</div>
+	</div>
+<div id="copy">All rights are reserved by "The Secret Ingredient" Team &copy; 2020</div>
+	</footer>
+</body>
+</html>

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="images/iconn.png" sizes="50x50">
+	<title>Popular Chefs</title>
+	<script src="javascriptShowMoreorLess.js"></script>
+	<style>
+		*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	
+	header{
+		/*position: fixed;*/
+		background-color: rgba(240, 209, 204,0.6);
+		width: 100%;
+		height: 50px;
+	}
+	header nav{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: absolute;
+		right: 5px;
+		width: 50%;
+		height: 50px;
+	}
+	button, input{
+		background-color: inherit;
+		border-radius: 20px;
+		border: 1px solid grey;
+		padding: 10px;
+		cursor: pointer;
+	}
+	h1{
+		margin: 0 auto 10px auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: white;
+		background-color: #C9A1E3;
+		width: 100%;
+		height: 40px;
+	}
+	a:link{
+		color: #701D40;
+		text-decoration: none;
+		font-size: 20px;
+	}
+	a:hover{
+		color: #db84db;
+	}
+	/*a:visited {
+		color: yellow;
+	}*/
+
+	#leftmenu{
+		margin: 30px 0 20px 30px;
+		display: flex;
+		justify-content: space-between;
+		width: 90%;
+		height: 410px;
+	}
+
+	#sidebar{
+		width: 200px;
+		height: 400px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border: 2px solid #C9A1E3;
+		padding: 10px;
+	}
+	#iframe{
+		display: inline-block;
+		height: 450px;
+	}
+
+	.hold{
+		display: flex;
+		justify-content: space-between;
+		height: 400px;
+		margin: 80px 10px 30px 10px;
+		padding: 15px;
+		background-color: #dcb9ed;
+		border: 3px solid #701D40;
+		
+	}
+
+	.image{
+		width: 25%;
+		border: 3px solid #694C70;
+		background-color: white;
+		text-align: center;
+		font-weight: bold;
+		font-size: 20px;
+		position: relative;
+		text-align: center;
+		font-weight: bold;
+		font-style: italic;
+	}
+	.ingredient{
+		width: 25%;
+		border: 3px solid #694C70;
+		padding: 15px;
+		background-color: white;
+		overflow-y: auto;
+	}
+	.receipt{
+		width: 40%;
+		border: 3px solid #694C70;
+		padding: 15px;
+		background-color: white;
+		font-style: italic;
+		overflow-y: auto;
+	}
+	#chef1img{
+		background-image: url("images/tahir.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+	}
+	#showmore{
+		display: none;
+	}
+	#chef2img{
+		background-image: url("images/huseyn.jpg");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+	}
+	#showmore1{
+		display: none;
+	}
+	#chef3img{
+		background-image: url("images/chef3.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+	}
+	#showmore2{
+		display: none;
+	}
+
+	footer{
+		background-color: #F0D1CC;
+		width: 100%;
+		height: 300px;
+	}
+	#container{
+		display: flex;
+		justify-content: space-between;
+		width: 70%;
+		margin: 0 auto;
+	}
+	ul{
+	color: #701D40;
+	font-weight: bold;
+	font-size: 25px;
+	}
+	
+	li{
+		padding-top: 10px;
+		font-size: 20px;
+		list-style: none;
+		font-weight: 10;
+	}
+
+	#copy{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 10px;
+		color: #5A4D5E;
+	}
+	.fllw{
+		display: inline-block;
+		border-radius: 24%;
+		width: 30px;
+		height: 30px;
+		border: none;
+	}
+	.fllw:hover{
+		border-radius: 50%;
+	}
+	</style>
+</head>
+<body>
+	<header id="header">
+		<nav>
+
+			<form>
+			<label for="site_search">Search in the site</label>
+			<input type="search" id="site_search" name="srch" aria-label="Search in the site">
+			<button>Search</button>
+			<input type="submit" value="Submit">
+			</form>
+
+			<a href="index.html">Home</a>
+			<a href="Contact_Us.html">Contact us</a>
+			<a href="About_Us.html">About us</a>
+		</nav>
+	</header>
+
+	<section id="leftmenu">
+		<nav><h1>Contents</h1>
+			<ul id="sidebar">
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</nav>
+	
+
+	<div id="iframe"><img width="900px" height="450px" src="images/mainpic.png"></div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="chef1">Tahir Amiraslanov</div>
+			<div id="chef1img"></div>
+		</div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Awards:
+				<li>Honored cultural worker</li>
+				<li>Awarded the Order of Glory</li>
+				<li>Honorary cultural worker</li>
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Work Experience:</h2> <br>He has been a member of the International Organization of Folk Art of UNESCO since 1998, Deputy Chairman of the Committee on Traditional Food since 2000, and Chairman since 2004.
+	<p>He is the vice-president of the Russian Culinary Association and a member of the World Board of Judges.</p>
+	He is an honorary member of the French Culinary Academy, the Culinary Associations of Malta, Romania, Jerusalem, the UAE and other countries.
+	<p>He is the president of the Azerbaijan National Culinary Association.</p>
+	<p>Since 1998, T. Amiraslanov has represented Azerbaijan in the jury of world competitions.</p><span id="points">...</span><span id="showmore">
+	<p>In 1992, thanks to him, Azerbaijan became the first country to be admitted to the World Union of Culinary Organizations (WCO) from the former USSR, the Turkic and Islamic worlds. Then Russia, Turkey, Kazakhstan, Serbia, Belarus, Moldova, Uzbekistan, Kyrgyzstan and others. countries became members of the WTO with its active assistance. Elected Honorary Member of the UNDP.</p>
+	<p>In 2017, he was elected Vice President of the World Islamic Culinary Association.</p>
+	<p>He is a board member and ambassador of the World Gatronomy Institute.</p>
+	<p>French National Culinary Academy, Sicilian Culinary Academy, etc. He is an honorary member. He is an academician of the International Academy of Sciences.</p>
+	<p>He is an Academician of the Georgian Academy of Sciences.</p>
+	<p>He is the founder of the new Informative food theory.</p></span>
+	<button onclick="showMoreorLess()" id="showMoreorLessButton">Show more</button>
+	<form>
+	<input type="button" name="detailedinfo" value="More Detailed Info" onclick="newWindow = window.open('https://az.wikipedia.org/wiki/Tahir_%C6%8Fmiraslanov', 'myTarget', 'toolbar=no, status=no, left=200px, top=150px, width=400px, height=300px');">
+	</form>
+	</div>
+	</section>
+
+	<section class="hold">
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Work Experience:</h2> <br>In 1991, he received an Honorary Decree in the "Chef 1991" competition organized by the Ministry of Trade and the Republican Committee of the Trade Union of Trade and Consumer Cooperatives.
+		<p>In 1992, as a result of the efforts of Tahir Amiraslanov, Azerbaijan became a Member of the World Culinary Association from the former USSR, the Socialist Camp, the Turkic and Islamic worlds. The delegation to Germany for this purpose includes Shahhuseyn Karimov.</p>
+		<p>In 1993 he was taken to the World Culinary Championship held by the ANC in Malta. All chefs returning from this Championship are nominated for the Master's degree by AMKM. Despite the strong protest of the members of the Republican Culinary Council (no documents were signed today) as a result of Tahir Amiraslanov's insistence. Only with the signature of the Minister of Trade Agasalim Bagirov Shahhuseyn Karimov</p><span id="points1">...</span><span id="showmore1">
+		<p>In 1993, he was awarded the title of Master Chef by the Ministry of Commerce. Shahhuseyn Karimov was awarded this honorary title not after the VI degree, but after the IV degree for his knowledge and skills in the field of cooking.</p>
+		<p>In 1997, Tahir Amiraslanov dedicated an article to him in the magazine Pitaniya and Obshchestvo, published in Russia with a circulation of one million, and called him the King of Azerbaijani cuisine. Later it remains a pseudonym.</p>
+		<p>Over the years, AMKA and AMKA have been sent to events in Singapore, Malaysia, Malta, France, Germany, Belgium, America, Italy, Turkey, Russia, UAE, China and other countries.</p>
+		<p>He received many awards and was awarded gold medals.</p>
+		<p>The "Star of the 3rd Millennium" competition of the Russian Culinary Association, held in Moscow in 2000 among more than 3,000 chefs, is hosted by the Vice President of the Russian Culinary Association Tahir Amiraslanov.</p>
+		<p>As one of the 60 most powerful and famous chefs in the world, Shahhuseyn Karimova was named the "Star of the 3rd Millennium" by Mary Luzhkov of Moscow and Bill Gallagher, President of WACS.</p>
+		<p>In 2007 he was elected an Honorary Member of the Azerbaijan National Culinary Association for his invaluable services in the development of Azerbaijani culinary culture.</p></span>
+		<button onclick="showMoreorLess1()" id="showMoreorLessButton1">Show more</button>
+		<form>
+		<input type="button" name="detailedinfo" value="More Detailed Info" onclick="newWindow = window.open('https://az.wikipedia.org/wiki/%C5%9Eahh%C3%BCseyn_K%C9%99rimov', 'myTarget', 'toolbar=no, status=no, left=200px, top=150px, width=400px, height=300px');">
+		</form>
+		</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Awards:
+				<li>Certificate of Honorary Member of the Azerbaijan National Culinary Association</li>
+				<li>Certificate of the Jury of the Azerbaijan National Culinary Association</li>
+				<li>"The best in their profession" certificate</li>
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="chef2">Shahhuseyn Karimov</div>
+			<div id="chef2img"></div>
+		</div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="chef3">Mirmovsum Dadashov</div>
+			<div id="chef3img"></div>
+		</div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Awards:
+				<li>Two gold and two silver medals were awarded at the EPAD Best Food Festival in Izmir on May 2-5, with the participation of the most famous chefs from 40 countries.</li>
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>The famous Azerbaijani chef was awarded a gold and silver medal at the food festival in Izmir:</h2> <br>Chefs from more than 40 countries took part in the festival, which is traditionally held in Izmir, Turkey, and it was a great honor to represent Azerbaijani cuisine with a rich history at the highest level: “We witnessed people's interest in our country's rich cuisine, customs and traditions. we would be. In the competitions, in which we participated individually and as a team, we presented all the subtleties of Azerbaijani cuisine to both participants and members of the jury.<span id="points2">...</span><span id="showmore2">The kitchen samples we prepared were distinguished from others by their taste and appearance. Not only we, but also the participants talked about the taste of food. On behalf of myself and our team, I would like to thank the head of the Azerbaijan National Culinary Center Tahir Amiraslanov and the head of the Buta House of Azerbaijani Culture Nurlan Yusifov for their support in participating in this festival. I am always ready to contribute to the promotion of Azerbaijani cuisine and culture.</span>
+	<button onclick="showMoreorLess2()" id="showMoreorLessButton2">Show more</button>
+	<form>
+	<input type="button" name="detailedinfo" value="More Detailed Info" onclick="newWindow = window.open('http://xalqqazeti.com/az/news/22319', 'myTarget', 'toolbar=no, status=no, left=200px, top=150px, width=400px, height=300px');">
+	</form>
+	</div>
+	</section>
+
+<footer>
+		<div id="container">
+		<div>
+			<ul>General Info
+			<li><a href="Contact_Us.html">Contact us</a></li>
+			<li><a href="About_Us.html">About us</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Contents
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Follow us
+			<li><a href="https://instagram.com/secret_ingredient_20?igshid=1dow9o2zwl1vb"><img class="fllw" src="images/instaLogo.jpg">Instagram</a></li>
+			<li><a href="https://youtube.com/channel/UC9MN9gSSIg8BMfui8kY37_g"><img class="fllw" src="images/youtubeLogo.png">Youtube</a></li>
+		</ul>
+		</div>
+	</div>
+<div id="copy">All rights are reserved by "The Secret Ingredient" Team &copy; 2020</div>
+	</footer>
+</body>
+</html>

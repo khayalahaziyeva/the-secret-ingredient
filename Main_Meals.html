@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="images/iconn.png" sizes="50x50">
+	<title>Main Meals</title>
+	<script src="javascriptShowMoreorLess.js"></script>
+	<style>
+		*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body{
+		background-color: white;
+	}
+	
+	header{
+		/*position: fixed;*/
+		background-color: rgba(240, 209, 204,0.6);
+		width: 100%;
+		height: 50px;
+	}
+	header nav{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: absolute;
+		right: 5px;
+		width: 60%;
+		height: 50px;
+	}
+	button, input{
+		background-color: inherit;
+		border-radius: 20px;
+		border: 1px solid grey;
+		padding: 10px;
+		cursor: pointer;
+	}
+	h1{
+		margin: 0 auto 10px auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: white;
+		background-color: #C9A1E3;
+		width: 100%;
+		height: 40px;
+	}
+	a:link{
+		color: #701D40;
+		text-decoration: none;
+		font-size: 20px;
+	}
+	a:hover{
+		color: #db84db;
+	}
+	#showmore{
+		display: none;
+	}
+	#showmore1{
+		display: none;
+	}
+	#showmore2{
+		display: none;
+	}
+	#showmore3{
+		display: none;
+	}
+	#leftmenu{
+		margin: 30px 0 20px 30px;
+		display: flex;
+		justify-content: space-between;
+		width: 90%;
+		height: 410px;
+	}
+
+	#sidebar{
+		width: 200px;
+		height: 400px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border: 2px solid #C9A1E3;
+		padding: 10px;
+	}
+	#iframe{
+		display: inline-block;
+		height: 450px;
+	}
+
+	.hold{
+		display: flex;
+		justify-content: space-between;
+		height: 400px;
+		margin: 80px 10px 30px 10px;
+		padding: 15px;
+		background-color: #dcb9ed;
+		border: 3px solid #701D40;
+		
+	}
+
+	.image{
+		width: 25%;
+		border: 3px solid #694C70;
+		background-color: white;
+		text-align: center;
+		font-weight: bold;
+		font-size: 20px;
+		position: relative;
+		text-align: center;
+		font-weight: bold;
+		font-style: italic;
+	}
+	.ingredient{
+		width: 25%;
+		border: 3px solid #694C70;
+		padding: 15px;
+		background-color: white;
+		overflow-y: auto;
+	}
+	.receipt{
+		width: 40%;
+		border: 3px solid #694C70;
+		padding: 15px;
+		background-color: white;
+		font-style: italic;
+		overflow: auto;
+	}
+
+	#plovimg{
+		background-image: url("images/plov1.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#plovimg:hover{
+		background-image: url("images/plov2.png");
+	}
+
+	#dolmaimg{
+		background-image: url("images/dolma1.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#dolmaimg:hover{
+		background-image: url("images/dolma2.png");
+	}
+
+	#kebabimg{
+		background-image: url("images/kebab1.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#kebabimg:hover{
+		background-image: url("images/kebab2.png");
+	}
+
+	#sajimg{
+		background-image: url("images/saj2.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#sajimg:hover{
+		background-image: url("images/saj1.png");
+	}
+
+	#pomidorimg{
+		background-image: url("images/pomidor2.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#pomidorimg:hover{
+		background-image: url("images/pomidor1.png");
+	}
+
+	#kelemimg{
+		background-image: url("images/kelem2.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#kelemimg:hover{
+		background-image: url("images/kelem1.png");
+	}
+
+	#chickenimg{
+		background-image: url("images/chicken1.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#chickenimg:hover{
+		background-image: url("images/chicken2.png");
+	}
+
+	#fishimg{
+		background-image: url("images/fish2.png");
+		background-size: cover;
+		height: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+		transition: all 1s linear;
+	}
+	#fishimg:hover{
+		background-image: url("images/fish1.png");
+	}
+
+	footer{
+		background-color: #F0D1CC;
+		width: 100%;
+		height: 300px;
+	}
+	#container{
+		display: flex;
+		justify-content: space-between;
+		width: 70%;
+		margin: 0 auto;
+	}
+	ul{
+	color: #701D40;
+	font-weight: bold;
+	font-size: 25px;
+	}
+	
+	li{
+		padding-top: 10px;
+		font-size: 20px;
+		list-style: none;
+		font-weight: 10;
+	}
+
+	#copy{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 10px;
+		color: #5A4D5E;
+	}
+	.fllw{
+		display: inline-block;
+		border-radius: 24%;
+		width: 30px;
+		height: 30px;
+		border: none;
+	}
+	.fllw:hover{
+		border-radius: 50%;
+	}
+	</style>
+</head>
+<body>
+	<header id="header">
+		<nav>
+
+			<form onsubmit="return validate(this.form)">
+			<label for="site_search">Search in the site</label>
+			<input type="search" id="site_search" name="srch" aria-label="Search in the site">
+			<button>Search</button>
+			<input type="submit" value="Submit">
+			</form>
+
+			<a href="index.html">Home</a>
+			<a href="Contact_Us.html">Contact us</a>
+			<a href="About_Us.html">About us</a>
+		</nav>
+	</header>
+
+	<section id="leftmenu">
+		<nav><h1>Contents</h1>
+			<ul id="sidebar">
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</nav>
+	
+
+	<div id="iframe"><iframe width="900px" height="450px" src="https://www.youtube.com/embed/q0SnblfrDwk"></iframe></div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="plov">Shah Plov (Crown Pilaf)</div>
+			<div id="plovimg"></div>
+		</div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Boneless mutton</li>
+				<li>Long rice</li>
+				<li>Peeled chestnuts</li>
+				<li>Onions</li>
+				<li>Raisins</li>
+				<li>Melted butter</li>
+				<li>Apricots</li>
+				<span id="points">...</span><span id="showmore">
+				<li>Cherry acid</li>
+				<li>Saffron</li> 
+				<li>Lemon salt</li>
+				<li>Salt</li> 
+				<li>Pepper</li>
+				<li>Flour</li>
+				<li>Eggs</li>
+				<li>Sour Cream</li>
+				</span>
+				<button onclick="showMoreorLess()" id="showMoreorLessButton">Show more</button>
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Before starting the preparation, we put the rice in a bowl of water for several hours.
+		At that moment, we clean the chestnuts, and then fry chestnuts in a pan. Fry onion until golden brown in a pan. Add 1/3 teaspoon of yellow ginger to the fried onion and mix. We fry pre-cooked meat in a pan with oil. Sprinkle lemon salt and pepper on the roasted meat and mix. Mix the meat with fried onions. Fry raisins, apricots and pickles in oil in a pan.Now, we are preparing lavash. Add the butter to flour. Add eggs, sour cream and salt and mix. Knead the dough. It becomes a soft dough. Divide the dough into small and large pieces, and spread the pieces. We take it, and place in the oven. You can also use ready-made one as your lavash.
+		We put water in a big pot. Add salt to the water. When boiling, pour the washed rice and cook. When the rice is not fully cooked, strain it and pour saffron on it. Add a little of cooked rice and add chestnuts on it. Again, add rice, add the meat on top and put the fried pickles between them. We add rice again. Add apricots with roasted raisins. Put in a preheated oven at 180-200 degrees. Take after frying all sides. The plov served is cut from the top and taken with a spoon.
+		</div>
+	</section>
+
+	<section class="hold">
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>To prepare the stuffing, first of all, minced mutton is prepared. While mutton is passed through a meat grinder, onions are also passed through it. Minced mutton with onion is obtained. After preparing the minced mutton with onion, add greens. Then add pepper and salt and mix with the minced meat. When the stuffing is ready, fresh or salted canned grape leaves are sterilized in water and the stuffing is ready to cook. Grape leaves are carefully opened. The minced meat is mixed well and placed on each leaf. Wrapped stuffing is neatly arranged in a pot. After the stuffing is placed in the pot, a little water is added to it and it starts to cook over low heat. The cooking time of the stuffing is about an hour. When the stuffing is served, yogurt is also served. In this case, it is possible to use yogurt with garlic.
+		</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Mutton</li>
+				<li>Onions</li>
+				<li>Rice</li>
+				<li>Dill</li>
+				<li>Mint</li>
+				<li>Coriander</li>
+				<li>Grape leaves</li>
+				<span id="points1">...</span><span id="showmore1">
+				<li>Melted butter</li>
+				<li>Yogurt</li>
+				<li>Salt</li>
+				<li>Pepper</li>
+				<li>Cinnamon</li>
+				<li>Pea kernels (optional in some cases)</li>
+				</span>
+				<button onclick="showMoreorLess1()" id="showMoreorLessButton1">Show more</button>
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="dolma">Yarpag Dolmasy</div>
+			<div id="dolmaimg"></div>
+		</div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="kebab">Azerbaijani Kebab</div>
+			<div id="kebabimg"></div>
+		</div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Mutton</li>
+				<li>Onions</li>
+				<li>Greens</li>
+				<li>Narsharab</li>
+				<li>Salt</li> 
+				<li>Pepper</li>
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>To prepare a piece of kebab, 30-35 pieces of mutton are put in a string. Sprinkle with salt and fry. A barbecue is used to cook steak kebabs. You have to wait for the wood to go out. At this time, the steak kebab does not burn and is delicious. The steak should be served immediately after it is ready (average 5 minutes). Next to the steak kebab, green onions in the form of chopsticks are served.
+		</div>
+	</section>
+
+	<section class="hold">
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Mutton is washed and cut. Onions should be cut into semicircles. Melt the tail oil in a deep frying pan or pot, then put the meat and cook on high heat for 5-7 minutes. Then add onion, salt and pepper. After frying for 20 minutes, add pomegranate seeds. Potatoes and eggplants are cut into large pieces. Peppers are washed and divided into 8 parts. Tomatoes are cut into circles. Fry the potatoes, eggplants, peppers and tomatoes separately until ready. When served, the meat should be placed in the middle of the plate, the edges of the vegetables, the lavash should be divided into 4 parts and placed on the plate.</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Mutton</li>
+				<li>Onions</li>
+				<li>Tail Oil</li>
+				<li>Sweet Pepper</li>
+				<li>Eggplants</li>
+				<li>Potatoes</li>
+				<span id="points2">...</span><span id="showmore2">
+				<li>Pomegranate Seeds</li>
+				<li>Black Pepper</li>
+				<li>Thin lavash</li>
+				<li>Salt</li>
+				</span>
+				<button onclick="showMoreorLess2()" id="showMoreorLessButton2">Show more</button>
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="saj">Saj İchi</div>
+			<div id="sajimg"></div>
+		</div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="pomidor">Pomidor, Biber, Badymjan Dolmasy</div>
+			<div id="pomidorimg"></div>
+		</div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Minced Meat</li>
+				<li>butter</li>
+				<li>Greens</li>
+				<li>Salt</li> 
+				<li>Pepper</li>
+				<li>Eggplants</li>
+				<li>Tomatoes</li>
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Firstly, minced meat is lightly fried. Add chopped greens, butter, ad salt. The inside of the tomatoes is removed, and the inside is added to the minced meat and cooked. The inside of the peppers and tomatoes to be stuffed is cleaned. The cooked meat with greens are put into inside of peppers, tomatoes and peppers. The top part of the pepper and tomato is closed. Arranged neatly in a bowl. The dish is covered with aluminum foil. Bake in a preheated oven. Served hot.
+		</div>
+	</section>
+
+	<section class="hold">
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>The meat and onions are passed through a meat grinder. Add washed and chopped greens, salt, carrots, melted butter and rice and mix. Take a pot according to the size of the cabbage and pour half of it into it and boil it. The head is cut off and placed in boiling water so that the cabbage leaves can come out easily. When the leaves soften, they are removed from the pot, and the thick, solid part of the upper part of the leaf is cut off. Put the prepared meat inside the leaf and fold it into a rectangle (you can also put peeled chestnuts inside when stuffing). We put the wrapped stuffing in a pot and put a plate on it so that the stuffing does not fall apart. Pour 3 cups of boiling water into the pot and put the food in the pot. First, keep the food at a high temperature so that it boils. When it starts to boil, we put it on a low heat. After cooking for 30 minutes, lift the plate and pour tomato paste (mix tomato paste with water in a separate bowl so that it is not too thick). After 15 minutes, remove the dish from the gas.</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Beef (mutton) minced meat</li>
+				<li>Onions</li>
+				<li>Medium-sized cabbage</li>
+				<li>Round rice</li>
+				<li>Butter</li>
+				<li>Coriander</li>
+				<span id="points3">...</span><span id="showmore3">
+				<li>Dill</li>
+				<li>Basil</li>
+				<li>Carrots</li>
+				<li>Tomato paste</li>
+				<li>Salt</li>
+				</span>
+				<button onclick="showMoreorLess3()" id="showMoreorLessButton3">Show more</button>
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="kelem">Kelem Dolmasy</div>
+			<div id="kelemimg"></div>
+		</div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="chicken">Chicken Levengi</div>
+			<div id="chickenimg"></div>
+		</div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Chicken</li>
+				<li>Onions</li>
+				<li>Walnut kernels</li>
+				<li>Cherry acid</li>
+				<li>Salt</li> 
+				<li>Pepper</li>
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>The onion is cleaned and passed through a meat grinder, mixed with walnut kernels, soaked pickle, salt and pepper. It is better to add a lot of pepper. Then the chicken is cleaned, washed, and salted. Cherry acid is applied to the inside and outside of the chicken. After that, the lavangi is collected inside the chicken. Cook the stuffed chicken in a preheated oven or oven until both sides are golden brown.
+		</div>
+	</section>
+
+	<section class="hold">
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Clean the fish scales and the organs are out. Then wash and dry the fish thoroughly. Put salt and pepper to the inside and top of the fish. Prepare the inside of the levengi. Pass the onion through a meat grinder. In a bowl, combine the onion, walnuts, pickle, and salt and pepper to taste. Preheat the oven to 180˚C. Rub the acid into and inside the fish. Fill it with levengi. Tie the fish with kitchen string or a cocktail stick. Place the fish on a baking sheet and bake in a preheated oven until golden brown and inside (about 45 minutes). Serve with narsharab.</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Large fish</li>
+				<li>Onions</li>
+				<li>Walnut kernels</li>
+				<li>Mud acid</li>
+				<li>Salt</li>
+				<li>Pepper</li>
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+			<div id="fish">Fish Levengi</div>
+			<div id="fishimg"></div>
+		</div>
+	</section>
+
+
+<footer>
+		<div id="container">
+		<div>
+			<ul>General Info
+			<li><a href="Contact_Us.html">Contact us</a></li>
+			<li><a href="About_Us.html">About us</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Contents
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Follow us
+			<li><a href="https://instagram.com/secret_ingredient_20?igshid=1dow9o2zwl1vb"><img class="fllw" src="images/instaLogo.jpg">Instagram</a></li>
+			<li><a href="https://youtube.com/channel/UC9MN9gSSIg8BMfui8kY37_g"><img class="fllw" src="images/youtubeLogo.png">Youtube</a></li>
+		</ul>
+		</div>
+	</div>
+<div id="copy">All rights are reserved by "The Secret Ingredient" Team &copy; 2020</div>
+	</footer>
+</body>
+</html>

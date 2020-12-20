@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="images/iconn.png" sizes="50x50">
+	<title>Jams</title>
+	<script src="javascriptShowMoreorLess.js"></script>
+	<style>
+		*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	body{
+		background-color: white;
+	}
+	
+	header{
+		/*position: fixed;*/
+		background-color: rgba(240, 209, 204,0.6);
+		width: 100%;
+		height: 50px;
+	}
+	header nav{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: absolute;
+		right: 5px;
+		width: 60%;
+		height: 50px;
+	}
+	button, input{
+		background-color: inherit;
+		border-radius: 20px;
+		border: 1px solid grey;
+		padding: 10px;
+		cursor: pointer;
+	}
+	h1{
+		margin: 0 auto 10px auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: white;
+		background-color: #C9A1E3;
+		width: 100%;
+		height: 40px;
+	}
+	a:link{
+		color: #701D40;
+		text-decoration: none;
+		font-size: 20px;
+	}
+	a:hover{
+		color: #db84db;
+	}
+
+	#showmore{
+		display: none;
+	}
+	#showmore1{
+		display: none;
+	}
+
+	#leftmenu{
+		margin: 30px 0 20px 30px;
+		display: flex;
+		justify-content: space-between;
+		width: 90%;
+		height: 410px;
+	}
+
+	#sidebar{
+		width: 200px;
+		height: 400px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border: 2px solid #C9A1E3;
+		padding: 10px;
+	}
+	#iframe{
+		display: inline-block;
+		height: 450px;
+	}
+
+	.hold{
+		display: flex;
+		justify-content: space-between;
+		margin: 80px 10px 30px 10px;
+		padding: 15px;
+		background-color: #dcb9ed;
+		border: 3px solid #701D40;
+		
+	}
+
+	.image{
+		width: 25%;
+		border: 3px solid #694C70;
+		background-color: white;
+		text-align: center;
+        max-height: 400px;
+        text-align: center;
+		font-weight: bold;
+		font-style: italic;
+		font-size: 20px;
+	}
+        
+        
+        
+        .image img{
+           background-size: cover;
+		height: 90%;
+            width: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+        }
+        
+      
+        
+	.ingredient{
+		width: 25%;
+		border: 3px solid #694C70;
+		padding: 15px;
+		background-color: white;
+        max-height: 400px;
+        overflow: auto;
+	}
+
+	.receipt{
+       
+        font-style: italic;
+		width: 40%;
+		border: 3px solid #694C70;
+		padding: 15px;
+		background-color: white;
+        max-height: 400px;
+        overflow: auto;
+	}
+
+	footer{
+		background-color: #F0D1CC;
+		width: 100%;
+		height: 300px;
+	}
+	#container{
+		display: flex;
+		justify-content: space-between;
+		width: 70%;
+		margin: 0 auto;
+	}
+	ul{
+	color: #701D40;
+	font-weight: bold;
+	font-size: 25px;
+	}
+	
+	li{
+		padding-top: 10px;
+		font-size: 20px;
+		list-style: none;
+		font-weight: 10;
+	}
+
+	#copy{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 10px;
+		color: #5A4D5E;
+	}
+	.fllw{
+		display: inline-block;
+		border-radius: 24%;
+		width: 30px;
+		height: 30px;
+		border: none;
+	}
+	.fllw:hover{
+		border-radius: 50%;
+	}
+	</style>
+</head>
+<body>
+	<header id="header">
+		<nav>
+
+			<form>
+			<label for="site_search">Search in the site</label>
+			<input type="search" id="site_search" name="srch" aria-label="Search in the site">
+			<button>Search</button>
+			<input type="submit" value="Submit">
+			</form>
+
+			<a href="index.html">Home</a>
+			<a href="Contact_Us.html">Contact us</a>
+			<a href="About_Us.html">About us</a>
+		</nav>
+	</header>
+
+	<section id="leftmenu">
+		<nav><h1>Contents</h1>
+			<ul id="sidebar">
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</nav>
+	
+
+	<div id="iframe"><img width="880px" height="450px" src="images/jamback.jpg" title="Strawberry Jam"></div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>White Cherry Jam</div>
+            <img src="https://www.georgianjournal.ge/media/images/georgianews/2016/August/Cuisine/110023825_img_7178.jpg"></div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>1 kg stoned sweet cherries</li>
+				<li>1 kg sugar</li>
+				<li>1 glass (200 ml) water</li>
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Put water and the sugar in a large pan and bring to the boil. The syrup shouldbe clear.Add all the stoned cherries to the boiling syrup. Keep at a rolling boil for 10-15 minutes, skimming off the scum that forms on the surface of the pan. Turn off the stove.Cherries leave for 4 hours to complete cooling. Cherries for this time to release their juice into the syrup and at the same time the syrup will be absorbed in sweet cherries. Cherry would look after the first boiling and complete cooling as on the picture here.This procedure should be repeated 3-4 times. Each time the jam should be cooled fully after cooking.Jam will look as an amber and cherry will be full of syrup. Place the preserve into sterilized jars and seal.
+
+</div>
+	</section>
+
+	<section class="hold">
+
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Once the fruit of a sliced watermelon is cut off, using a sharp knife, peel off the green skin and the pink flesh from the watermelon rind. You should only use the white part of the rind. Using a crinkle cutter, press with a downward motion to cut the rind into rectangles or squares, about 1-inch long (use a regular knife if crinkle knife is not available).
+Place the rind in a large bowl. Pour in enough cold water to cover the rind and sprinkle 3 tablespoon baking soda on top. Leave aside for 2 hours (presoaking the rind in soda-water will harden the rind and will help it retain its shape while cooking). Drain the rind, rinse thoroughly under running water and drain again.
+Place the rind in a wide basin pan or a heavy-based wide saucepan. Pour in enough water to cover the rind. Bring to a boil over medium heat and continue to boil for 2 minutes, then drain the rind on a large colander. Return the rind to the same pan, pour in water again and boil for another 2 minutes. Drain again and return the rind to the pan.
+Add the sugar and water. Bring to a boil over medium heat, stirring occasionally. Maintain a gentle simmer and cook the preserves, uncovered, for about 2 hours 45 minutes. <span id="points">...</span><span id="showmore">Add the geranium leaf or a cinnamon stick or cloves and continue to simmer, for another 15 minutes, or until the rind is golden and transparent, and the syrup has reduced. Do not overcook, or the preserves will crystallize (if the sides of the pan become crystallized, you have cooked the preserves too much. To remedy this, add a cup of water to the pan, bring to a boil, then remove from the pan immediately). Remove the pan from the heat. Discard the geranium leaf or spices. Leave the preserves to cool in the pan.
+Meanwhile, sterilize a canning jar in boiling water and dry thoroughly.
+Spoon the watermelon rind with the syrup into a sterilized jar. Make sure the syrup covers the rind completely. Seal it tightly. Keep in a cool, dry place. Serve in a round preserve bowl, to share.
+</span>
+				<button onclick="showMoreorLess()" id="showMoreorLessButton">Show more</button>
+</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>2 pounds (1 kg) cleaned and cut watermelon rind </li>
+				<li>3 tablespoons baking soda</li>
+				<li>3 pounds granulated sugar</li>
+                <li>15 cups water</li>
+                <li>1 leaf of unsprayed rose geranium, or a small cinnamon stick, or 3-4 cloves</li>
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>Watermelon Jam</div>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQoGU-790pLK4qWFb7BBH3xI579AUqh80ox5w&usqp=CAU"></div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div id="text">Walnut Jam</div>
+            <img src="https://www.gourmeturca.com/walnut-jam-380g-jams-gourmeturca-4642-17-B.jpg"></div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>1 kg/2.2 lb green walnuts</li>
+				<li>1.5 kg/3 lb 4 oz sugar</li>
+				<li>1 lemon a few cloves or 1 tspn cardamon</li>
+                <li>500 g/1lb 4 oz of slaked lime (calcium hydroxide)</li>
+			</ul>
+        </p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Wash the walnuts and remove the green shells.
+Soak the shelled walnuts in cold water for 3 days, changing the water 3 or 4 times per day.
+Prepare lime water by mixing 500 g/1lb 4 oz of slaked lime (calcium hydroxide) and 3 litres/5 pints 3 fl. oz of cold water. Mix the solution well, leave to settle for 3 to 4 hours, then filter the lime water.
+Soak the walnuts in the lime water for 2 to 3 days, stirring them 4 to 5 times per day.
+Remove the walnuts from the lime water and wash thoroughly. Pierce the nuts with a thick needle or fork and soak in cold water for another 3 days, changing the water 2 or 3 times per day.
+Plunge the nuts into boiling water for 10 minutes. Remove and dry thoroughly.
+Dissolve the sugar in 2.25 litres/4 pints of water to make a syrup. Bring to the boil, add the nuts, bring back to the boil and simmer for 15 minutes. Remove from the heat and set aside for 4 to 6 hours. Bring to the boil twice more, simmering fro 15 minutes and leaving 4 to 6 hours between each boiling. Add the lemon juice, cloves or cardamon after the last boil.
+Bring back to the boil once more and simmer until the nuts are soft.
+Put the nut jam into sterilized jars and seal.</div>
+	</section>
+
+	<section class="hold" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Take small, plum-shared, hard tomatoes. Immerse in boiling water for 5-8 seconds, immediately cool in cold water and peel. Pour on syrup and keep for a day. Drain syrup on the second day, boil and pour on tomatoes. The same on the third day. On the fourth day boil syrup with tomatoes bringing to readiness. Aromatize with vanillin or fruit essence.
+</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>1 kg/2.2 lbs tomatoes</li>
+				<li>1,3 kg sugar</li>
+				<li>drop of vanillin</li>
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>Tomoto Jam</div>
+            <img src="http://oval.az/wp-content/uploads/2016/03/Tomato-jam.jpg"></div>
+	</section>
+
+
+
+
+<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>Apple Jam</div>
+            <img src="https://metbuat.az/images/milli/images_d/172816_7.jpg"></div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>4 pounds apples (About 10 apples. Any variety would do. I used Granny Smith and Golden Delicious. For best results, use a combination of tart and sweet apples)</li>
+				<li>1 cup apple cider (juice) from the apple rind and core (see the recipe)</li>
+				<li>2 cups water</li>
+                <li>2 cups granulated sugar</li>
+                <span id="points1">...</span><span id="showmore1">
+                <li>3 tablespoons freshly squeezed lemon juice</li>
+                <li>1/3 teaspoon ground cinnamon</li>
+                <li>1/3 teaspoon ground cardamom</li>
+                <li>1/8 teaspoon ground nutmeg</li>
+                <li>1/8 teaspoon ground cloves</li>
+                <li>1/8 teaspoon ground ginger</li>
+                </span>
+				<button onclick="showMoreorLess1()" id="showMoreorLessButton1">Show more</button>
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Wash, peel and core the apples. Do not discard the peel and core. Cut the apples into wedges or chunks.
+Extract the juice from the reserved rind and core in a juicer.  You should obtain 1 cup of juice.
+Place the apples, cider, and the rest of ingredients in a large heavy bottomed saucepan. Cook, uncovered, over medium heat, stirring often with a wooden spoon to prevent the crust from forming and burning, until apples are very tender, about 45 minutes. Puree the apples with a potato masher or a fork.
+Transfer the pureed apple mixture into a smaller saucepan. Taste and add more spices of your choice, if you wish.  Cook, uncovered, over low heat, stirring often to prevent the crust from forming and scorching, until the mixture is jam-like thick and dark (light caramel color), about 1  1/2 to 2 hours. Remove from the heat. Allow the mixture to cool. Pack into a jar  or an airtight container. Store in the refrigerator for up to 2 months.
+</div>
+	</section>
+
+<section class="hold">
+
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Take 3-4 days old egg-plants, cut ends, peel and soak for 5-6 hours in soda solution (1 tablespoon cooking soda per 1 liter water)
+Rinse egg-plants, needle in several spots, pour on syrup and keep for 8-10 hours. Drain syrup on the second day, boil and pour on again. Repeat the procedure on the third day and then boil egg-plant in syrup. Bring to readiness on the fourth day. Add citric acid and vanillin.
+
+</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>1kg g/2.2 lbs plants</li>
+				<li>1,5 kg sugar</li>
+				<li>a few citric acid</li>
+                <li>a drop of vanillin</li>
+                <li>a few soda solution</li>
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>Egg-Plant Jam</div>
+            <img src="https://img.nuhcixan.az/news/2018/08/badimcan.jpg?v=MjAxOC0wOC0xOSAxNToyMjowMQ=="></div>
+	</section>
+
+
+<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>Rose Jam</div>
+            <img src="https://sirliqadin.az/uploads/posts/2015-10/1443974351_roza12.jpg"></div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>100 g/4 oz rose petals</li>
+				<li>1 kg/2.2 lbs sugar</li>
+				<li>a few drops of citric acid or lemon juice</li>
+                
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Cut off the white parts from the bottom of the petals.
+Wash the petals and blanch in boiling water for 5 minutes. Put the petals in a jam pan or large saucepan.
+Put 2 glasses (200 ml/7 fl.oz) of the blanching water into a saucepan and add the sugar. Heat through, stirring until all the sugar has been dissolved.
+Pour the syrup over the rose petals, stirring to make sure that all the petals are coated in syrup.
+Bring the petals to the boil and simmer for around 20 minutes. A few minutes before the jam is ready, add the citric acid or lemon juice and stir well.
+Leave the jam overnight to cool.
+Place the jam into sterilized jars and seal.</div>
+
+	</section>
+
+
+
+
+
+<footer>
+		<div id="container">
+		<div>
+			<ul>General Info
+			<li><a href="Contact_Us.html">Contact us</a></li>
+			<li><a href="About_Us.html">About us</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Contents
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Follow us
+			<li><a href="https://instagram.com/secret_ingredient_20?igshid=1dow9o2zwl1vb"><img class="fllw" src="images/instaLogo.jpg">Instagram</a></li>
+			<li><a href="https://youtube.com/channel/UC9MN9gSSIg8BMfui8kY37_g"><img class="fllw" src="images/youtubeLogo.png">Youtube</a></li>
+		</ul>
+		</div>
+	</div>
+<div id="copy">All rights are reserved by "The Secret Ingredient" Team &copy; 2020</div>
+	</footer>
+</body>
+</html>

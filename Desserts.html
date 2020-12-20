@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="images/iconn.png" sizes="50x50">
+	<title>Desserts</title>
+	<script src="javascriptShowMoreorLess.js"></script>
+	<style>
+		*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	/*body{
+		background-color: #CEDAD3;
+	}*/
+	
+	header{
+		/*position: fixed;*/
+		background-color: rgba(240, 209, 204,0.6);
+		width: 100%;
+		height: 50px;
+	}
+	header nav{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: absolute;
+		right: 5px;
+		width: 60%;
+		height: 50px;
+	}
+	button, input{
+		background-color: inherit;
+		border-radius: 20px;
+		border: 1px solid grey;
+		padding: 10px;
+		cursor: pointer;
+	}
+	h1{
+		margin: 0 auto 10px auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: white;
+		background-color: #C9A1E3;
+		width: 100%;
+		height: 40px;
+	}
+	a:link{
+		color: #701D40;
+		text-decoration: none;
+		font-size: 20px;
+	}
+	a:hover{
+		color: #db84db;
+	}
+
+	#showmore{
+		display: none;
+	}
+	#showmore1{
+		display: none;
+	}
+	#showmore2{
+		display: none;
+	}
+	#showmore3{
+		display: none;
+	}
+	#showmore4{
+		display: none;
+	}
+	#showmore5{
+		display: none;
+	}
+	#showmore6{
+		display: none;
+	}
+	#showmore7{
+		display: none;
+	}
+
+	#leftmenu{
+		margin: 30px 0 20px 30px;
+		display: flex;
+		justify-content: space-between;
+		width: 90%;
+		height: 410px;
+	}
+
+	#sidebar{
+		width: 200px;
+		height: 400px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border: 2px solid #C9A1E3;
+		padding: 10px;
+	}
+	#iframe{
+		display: inline-block;
+		height: 450px;
+	}
+
+	.hold{
+		display: flex;
+		justify-content: space-between;
+		margin: 80px 10px 30px 10px;
+		padding: 15px;
+		background-color: #dcb9ed;
+		border: 3px solid #701D40;
+		
+	}
+
+	.image{
+		width: 25%;
+		border: 3px solid #694C70;
+		background-color: white;
+		text-align: center;
+        max-height: 400px;
+        font-size: 20px;
+        text-align: center;
+		font-weight: bold;
+		font-style: italic;
+	}
+        
+    .image img{
+        background-size: cover;
+		height: 90%;
+        width: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+        }
+        
+      
+        
+	.ingredient{
+		width: 25%;
+		border: 3px solid #694C70;
+		padding: 15px;
+		background-color: white;
+        max-height: 400px;
+        overflow-y: auto;
+	}
+
+	.receipt{
+       
+        font-style: italic;
+		width: 40%;
+		border: 3px solid #694C70;
+		padding: 15px;
+		background-color: white;
+        max-height: 400px;
+        overflow-y: auto;
+	}
+        
+       .text{
+		text-align: center;
+		font-weight: bold;
+		font-style: italic;
+	}
+       
+
+	footer{
+		background-color: #F0D1CC;
+		width: 100%;
+		height: 300px;
+	}
+	#container{
+		display: flex;
+		justify-content: space-between;
+		width: 70%;
+		margin: 0 auto;
+	}
+	ul{
+	color: #701D40;
+	font-weight: bold;
+	font-size: 25px;
+	}
+	
+	li{
+		padding-top: 10px;
+		font-size: 20px;
+		list-style: none;
+		font-weight: 10;
+	}
+
+	#copy{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 10px;
+		color: #5A4D5E;
+	}
+	.fllw{
+		display: inline-block;
+		border-radius: 24%;
+		width: 30px;
+		height: 30px;
+		border: none;
+	}
+	.fllw:hover{
+		border-radius: 50%;
+	}
+	</style>
+</head>
+<body>
+	<header id="header">
+		<nav>
+
+			<form>
+			<label for="site_search">Search in the site</label>
+			<input type="search" id="site_search" name="srch" aria-label="Search in the site">
+			<button>Search</button>
+			<input type="submit" value="Submit">
+			</form>
+
+			<a href="index.html">Home</a>
+			<a href="Contact_Us.html">Contact us</a>
+			<a href="About_Us.html">About us</a>
+		</nav>
+	</header>
+
+	<section id="leftmenu">
+		<nav><h1>Contents</h1>
+			<ul id="sidebar">
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</nav>
+	
+
+	<div id="iframe"><img width="900px" height="450px" src="images/dessertsback.png"></div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div class="text">Pakhlava</div>
+            <img src="https://www.196flavors.com/wp-content/uploads/2016/05/tenbel-pakhlava-2-FP.jpg"></div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Dough:<br>
+                    30 g yeast <br>
+                    1 egg<br>
+                    500 ml milk<br>
+                    800-1000 g wheat flour<br>
+                    200 g melted butter <br>
+                    150 ml additionally milk<br>
+                    A pinch of salt</li>
+                
+				<li>Filling:<br>
+                    500 g walnut kernels (you can use also almonds or hazelnuts) <br>
+                    500 g sugar<br>
+                    10 g cardamom</li>
+                    <span id="points1">...</span><span id="showmore1">
+                
+				<li>Syrup:<br>
+                    1 cup = 220 ml<br>
+                    1 cup water<br>
+                    1 cup sugar<br>
+                    1-2 tbsp. honey<br>
+                    1 tsp. fresh lemon juice<br>
+                    a few threads of saffron
+                </li>
+                
+                <li>Additionally:<br>
+                    400 gr melted butter<br>
+                    1 egg<br>
+                    1-2 tbsp. saffron infusion
+                </li>
+
+                </span>
+				<button onclick="showMoreorLess1()" id="showMoreorLessButton1">Show more</button>
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>You should first begin prepare the walnuts for the filing. You can do it 1 day before you will cook Paklava. Remove the skin from the walnuts or almonds by heating them in a frying pan or in the oven (app. 200 gr C), then, while they are warm, placing inside a clean tea-cloth and rubbing, but not too hard. If there are still skin, try to remove it with a knife. Please pay attention, that walnuts should be warm, else the skin will not be removed. So if you have many walnuts, fry them in small parts. Let it be chilled. Crumble the skinned nuts and mix with the sugar.
+
+Warm the milk to 30-35 degrees Celsius, add the yeast and dissolve them in the milk. Add 1 tbsp. sugar, a pinch of salt and app. 13 tbsp. (±1 tbsp.) flour and mix it well. Let it rise for 30 minutes. Remember to mix it 1-2 times.
+
+Take the butter and melt it. Add 150 ml milk to the butter.
+
+Sieve the part of the flour into a large bowl and make a hole in the center. Pour the yeast-milk mix, butter-milk mix and egg into the hole and gradually fold in the flour from the outside. Knead well until the dough is smooth and soft.  Cover with a clean tea-cloth and leave in a warm place to rise for 30 to 45 minutes (no longer!)<span id="points">...</span><span id="showmore">
+
+While the dough is rising, prepare the filling. Take mixed walnuts and sugar and add cardamom. Mix very well.
+
+Take the risen dough and divide it to 13 equal 13 balls (11 of them – one for each layer of the Paklava). Take 2 last balls and merge them to 1 big ball. Now you can begin to toll out the dough.
+
+Take the small balls one after another and roll them out until the pastry is very thin, 0.5 mm thick (like a filo dough).
+
+Place a layer of pastry in the base, making sure it covers the base completely. Brush with melted butter and place another layer on top. Brush with melted butter the second layer too (the base of the Paklava needs to be thicker than the rest). Spread the filling over the second layer, 2-3 mm thick.
+            Place another layer on top, brush with melted butter and cover with filling. Continue until all small balls are rolled out. Take the last big ball and roll it out a little bit thick and cover the last layer with this layer.  Cut into diamond (rhombus) shapes, 10×4 cm, before cooking. Coat the surface with egg yolk mixed with saffron infusion. Place half a walnut or almond in the centre of each diamond.Bake at 200 degrees Celsius in the oven for 10 minutes. Take the base out and  pour melted butter, so it comes to all places in Paklava. Let the case back to oven and let it bake for 15-20 minutes.
+
+Prepare the syrup. Boil the water, sugar and honey in a small saucepan. When it begins to boil add saffron threads in. Turn off the heat as soon as the syrup starts to boil. Added last the lemon juice.
+
+When Paklava is golden, take it out and pour the syrup. Put it back into the oven and bake it  10 minutes more.Paklava is ready. Await till it is a little bit cooled down and take each part of pakhlava out of the base and put it with “face down” on the plate. Let paklava cooled down. When Paklava completely cooled, turn it “face up” at original position and serve.</span>
+				<button onclick="showMoreorLess()" id="showMoreorLessButton">Show more</button>
+
+</div>
+	</section>    
+    
+    
+    <section class="hold">
+
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"> <h2>Preparation Method:</h2> <br>Prepare the dough.  Put the flour and the butter in a large mixing bowl. Using your hands, rub them together until you obtain fine crumbs. Make sure there are no large crumbs left.In a small bowl, using  a spoon, mix the eggs yolks, sour cream, salt and vanilla powder.
+Using your hands, mix the ingredients until fully incorporated and a rough and inconsistent dough is obtained.  Transfer the dough to your work surface. Put the remaining 1/4 cup of lukewarm milk in a separate bowl. Constantly wetting your hands with milk, knead the dough for a few minutes to make it smooth.Shape the dough into a ball. Put it back in the bowl, cover with plastic wrap and leave aside to rest for about 30 minutes. In the meantime, prepare the filling. If you are using already skinned nuts, grind them finely in a food processor. In a mixing bowl, combing the ground nuts with sugar. Add the ground cardamom and vanilla powder. Mix until fully incorporated.
+To skin hazelnuts and walnuts at home: Place raw hazelnuts in a large frying pan, and roast over medium heat, stirring frequently, until the skins crack and begin to flake off, about 10 minutes. Take care not to burn the nuts.<span id="points2">...</span><span id="showmore2"> Working with small batches of nuts at a time, place them them on a kitchen cloth and rub with it to remove the skins. Most of the skins will come off although some will still cling to the nut (especially on walnuts).  Do not worry, a little skin will not be that visible in the filling.
+To skin almonds at home: Put the almonds in a pot and pour boiling water over them to barely cover their tops. Let the almonds sit in the water for about 2 minutes (do not keep them there for too long, or they will lose their crispiness and will be too soft). Drain off the water, pat dry the nuts and slip the skins off by squeezing the almonds between your thumb and fingers.Divide the dough into 36 balls, each weighing 50 g.Work with one ball at a time, and cover the rest.  Roll each ball into a 4 inch (10 cm) circle.Place the circle in the palm of your hand, slightly folded, and put 2 tablespoons of the filling in the center.Starting at one end, begin sealing the left and right edges towards the center to obtain a half-moon shape.  Sealed shekerbura must be somewhat chubby from the filling and never flat.
+Using your thumb and index finger, start pinching and twisting the dough along the seal to decorate the edges.Arrange the pastry on a baking sheet, lined with parchment (baking) paper. Continue working with the rest of the dough balls, arranging them on the baking sheet as you are finished decorating their edges.Now decorate the tops. Holding a pastry in one hand,  and a maggash (tweezers) in the other, pinch the dough with the maggash at an angle and slightly lift it upward (see the picture below). Continue until you obtain a row of pattern. Create similar rows, each at an angle to the next one, until the entire surface is decorated.Bake on the middle rack of the oven preheated to 175C (350F) for 15-20 minutes, or until the edges just begin to change their color and the bottom is light brown.  Take care not to overbake the pastries – their tops should be light color when baked. If you did not decorate your pastries with the tweezers, coat them with powdered sugar once they cool off.
+ In another small bowl, put the yeast, 1 tablespoon flour, 1 tablespoon sugar. Fill it with 1/4 cup of  lukewarm milk. Let stand for about 2 minutes.</span>
+				<button onclick="showMoreorLess2()" id="showMoreorLessButton2">Show more</button>
+</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>For the Dough:<br>
+                    1 kg / 2.2 pounds  first grade wheat flour (white only)  + 1 tablespoon (for step 3)<br>
+                    400 g / 14 oz unsalted butter, cut into large chunks<br>
+                    5 egg yolks<br>
+                    250 g / 9 oz sour cream<br>
+                    1/4 teaspoon salt<br>
+                    1/2 teaspoon vanilla powder (optional)<br>
+                    1/2 teaspoon dry  yeast<br>
+                    1 tablespoon sugar<br>
+                    1/2 cup / 125 ml lukewarm milk</li>
+                    <span id="points3">...</span><span id="showmore3">
+				<li>3 tablespoons baking soda</li>
+
+                <li>For the Filling:<br>
+                    700 g  / 1.5 pounds skinned hazelnuts, or almonds or walnuts (See recipe for how to skin if readily skinned nuts are not available)<br>
+                    700 g / 1.5 pounds granulated sugar<br>
+                    2 teaspoon, or to taste, ground cardamom</li>
+                    </span>
+				<button onclick="showMoreorLess3()" id="showMoreorLessButton3">Show more</button>
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div class="text">Shakarbura</div>
+            <img src="https://cdn.yemek.com/mncrop/313/280/uploads/2016/10/sekerbura.jpg"></div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div class="text">Halva</div>
+            <img src="https://media.holidayme.com/wp-content/uploads/2018/04/21125855/HolidayMe_11MostDeliciousDishesDrinksofAzerbaijaniCuisine-Halva.jpg"></div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>175 g/7 oz wheat flour</li>
+				<li>200 g/8 oz butter</li>
+				<li>225 ml/8 fl oz water</li>
+                <li>225g/9 oz sugar</li>
+                <li>1 spoon honey</li>
+                <li>Pinch of salt</li>
+			</ul>
+        </p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Put the sugar in a saucepan and add the water, stirring well. Heat over a medium flame, adding the honey and some threads of saffron. Mix well. Remove the saucepan from the heat.
+Melt the butter separately.
+Add the flour and a pinch of salt to the melted butter and mix well. The flour must be completely absorbed by the butter. Flour cannot be added later.
+Heat the flour and butter mixture over a medium heat, stirring all the time, until the mixture turns a golden color.&nbsp;
+Remove from the heat and add the sugar and water mixture. Take care not to burn your fingers. Mix thoroughly.
+Place the halva on dessert plates. Leave for one hour to set before serving. The finished halva should be moist, neither too liquid nor too firm in consistency. If the halva is firm or dry, too much flour has been used.</div>
+	</section>
+
+	<section class="hold">
+
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Start with the yeast mixture. Mix the dry ingredients together, and add 1/3 cup of warm water. Mix together until smooth, and leave to rise in a warm place.
+While the yeast mixture is rising, melt the butter, and warm the milk.
+For the dough, in a large bowl, mix the egg, egg yolk, salt, vanilla sugar and yeast mixture. Add the warm milk and melted butter, and mix it all together.
+Begin kneading the dough while slowly adding flour. Save some flour for dusting the layers.
+Continue kneading the dough until its smooth, soft, and does not stick to your hands.
+Put dough into a clean bowl, cover with plastic, and let rise for 1-2 hours in a warm place.While dough is rising, prepare the filling. Blend the skinned almonds until it resembles coarse salt. Mix the blended almonds with the sugar, cardamom, and vanilla sugar. Set aside.Once the dough is risen, divide it into six equal balls. Cover them to prevent them from drying out. Roll out the first ball into a very thin layer (until its see-through). Try to keep it square or rectangle shaped.<span id="points4">...</span><span id="showmore4"> Gently brush with warm, melted clarified butter. Roll out the second ball of dough, place it on top of the first layer, and brush with the butter again. Repeat until all the layers are used.
+Preheat Oven to 350 F/180 C.
+Once all layers are stacked, roll all the layers into a tight roll, as you would a roulade. Slice the dough into equal pieces, approx. 1/2 inch/1.5 cm thick. Gently flatten out each slice, making a small bowl shape in the palm of your hand. Put one full tablespoon of filling inside, and bring the edges together to close it. Pinch the edges tightly, and twist them along the seam to keep it closed.
+
+-Place the Badambura on a baking sheet, seam down, so they are sitting on the seam.</span>
+<button onclick="showMoreorLess4()" id="showMoreorLessButton4">Show more</button>
+</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>Yeast mixture<br>
+                    1 tsp dry<br>
+                    1 Tbsp granulated sugar<br>
+                    1 Tbsp flour<br>
+                    1/3 c warm water</li>
+                
+				<li>Ingredients for dough<br>
+                    1 egg (room temperature)<br>
+                    1 yolk<br>
+                    pinch of salt<br>
+                    1 Tbsp vanilla sugar <br>
+                    1 cup unsalted butter, meltedd<br>
+                    1 cup warm milk<br>
+                    5 cups AP flour</li>
+                    <span id="points5">...</span><span id="showmore5"> 
+                
+				<li>Ingredients for filling <br>
+                    1/2 lb peeled almonds<br>
+                    1/2 lb granulated sugar<br>
+                    1 tsp cardamom<br>
+                    1 Tbsp vanilla sugar (I believe I actually used some coconut sugar instead..for kicks?)</li>
+                
+                <li>Additional ingredients<br>
+                    1 cup melted clarified butter, for brushing between layers of dough
+                    powdered sugar for dusting</li>
+                    </span>
+<button onclick="showMoreorLess5()" id="showMoreorLessButton5">Show more</button>
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div class="text">Badambura</div>
+            <img src="https://bishinti.az/file/elan/2019/03/06/1551894197_43180513_552360838554828_8771458395465009787_n.jpg"></div>
+	</section>
+
+
+
+
+<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div class="text">Gogal</div>
+            <img src="https://azcookbook.com/storage/2011/03/IMG_3968.jpg"></div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>For the Dough:<br>
+                    1 package (¼ ounce / 2¼ teaspoons) active dry yeast<br>
+                    1 cup warm water (105˚–110˚F)<br>
+                    6 cups all-purpose flour, plus extra for kneading<br>
+                    2 teaspoons salt<br>
+                    1 cup milk, at room temperature<br>
+                    1 large egg, at room temperature<br>
+                    7 ounces clarified butter (ghee) or unsalted butter, melted and cooled</li>
+                    <span id="points6">...</span><span id="showmore6"> 
+                <li>
+                    For the Spice Filling:<br>
+                    2 tablespoons fennel seeds<br>
+                    2 tablespoons cumin seeds (can substitute anise seeds)<br>
+                    ½ teaspoon turmeric<br>
+                    1 teaspoon salt<br>
+                    ¼ teaspoon ground black pepper<br>
+                    2 cups all-purpose flour<br>
+                    4 ounces clarified butter or unsalted butter, melted and cooled</li>
+				<li>For the Butter Spread:<br>
+                    About 18 ounces clarified butter (ghee) or unsalted better, melted and cooled (clarified butter is preferred for better taste)</li>
+				<li>For the Top:<br>
+                    2 large egg yolks <br>
+                    1 tablespoon Nigella sativa seeds (can substitute poppy seeds)</li>
+                    </span>
+<button onclick="showMoreorLess6()" id="showMoreorLessButton6">Show more</button>
+                
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Step 1 –  Prepare the Dough:
+In a small bowl, dissolve the yeast in the warm water and let stand until frothy, about 10 minutes. Sift the flour into a large mixing bowl. Add the salt and mix well. Make a well in the center and add the yeast mixture, milk, egg, and butter. Stir with your hand to incorporate the ingredients.
+Scrape the dough onto a lightly floured surface and knead until smooth and elastic and not tight, about 10 minutes. If the dough is still sticky, add more flour and knead but do not overdo it with the flour. Put the dough back into the large mixing bowl, cover with a kitchen towel or plastic wrap, and let rise in a warm spot, until it doubles in bulk, about 1 1/2 hours. The dough will be puffy and soft when poked with a finger.<br>
+Step 2 – Prepare the Spice Filling:
+Toast the fennel and cumin seeds (or anise seeds) on a hot skillet for about 2 minutes, until their aroma rises (toasting will intensify their aroma and flavor). Grind the spices in a spice grinder or with a mortar and pestle. In a medium mixing bowl, combine all the ingredients for the filling except the butter. Stir to mix. Gradually add the melted butter and rub with your fingers until you obtain fine crumbs. Set aside.<br>
+<span id="points7">...</span><span id="showmore7"> 
+Step 3 – Prepare the Butter Spread:
+Melt the butter and set aside to cool.<br>
+Step 4 – Prepare the Baking Sheets and the Work Surface:
+Have 2 large baking sheets ready. You will need a large work surface divided into two sections: one to roll out the dough and another to assemble the layers. Sprinkle some flour onto one half of the work surface on which you will roll out the dough. Generously oil the other half of the workplace (or sprinkle with flour, too).<br>
+Step 5 – Prepare the Dough Layers:
+Shape the risen dough into a log and divide into 9 equal pieces. Shape each piece into a ball. Work with one ball at a time and cover the rest with a kitchen towel.
+Using a thin, long rolling pin, roll out one ball into a 20-inch circle that is about 1/16-inch thick. When you roll the dough, from time to time sprinkle it with flour and spread all over the circle to prevent it from sticking to the rolling pin and for easier rolling. Wrap the rolled-out circle around the rolling pin and unwrap on another side of the work area.
+Drizzle 5 to 7 tablespoons (be generous) of the butter spread onto the circle and spread over the circle with your hand. Roll out the second dough ball and place on top of the first layer. You can roll it out into a smaller circle. Now, with your hands, hold the edges of the second layer and very gently stretch in all directions (first one side, then the other, etc.) to fit the bottom circle, then stretch them together until a large rectangle is obtained (rectangle will be easier to cut into equal-size strips at a later stage, but it is not mandatory – circle is ok too). Continue rolling up the remaining dough balls in the same fashion, placing them on top of each other, brushing with butter (except the final layer, which should not be buttered), and stretching with your hands. Again, roll the subsequent balls smaller that the first one – you will stretch them after you have placed them on the previous buttered layer.
+Each stretched layer should be almost see-through (see photo below). Take care not to tear the layers when you stretch them, but should this happen, do not worry  – leave them as is or try to patch them if you can with pieces of dough.
+Once all the layers are ready, gently pull the sides of the layered rectangle to stretch as far as it can go. The thinner and wider the layers, the flakier the breads will be. Ideally, you can obtain a rectangle about 20 by 26 inches. If your rectangle is smaller, it’s ok too.
+    <br>
+Step 6 – Stuff and Shape the Breads:
+Next, using a sharp knife, cut the layered rectangle along its shorter side into 2  1/4-inch-wide strips. For smaller breads, cut shorter strips along the longer side of the rectangle.
+Slightly stretch each strip lengthwise (this will make the layers thinner and the bread flakier), then beginning from one narrow side, gently roll it into a tight roll-up.
+Leave the roll-ups aside to rest for 10  minutes.
+Take the roll-up in your hand, one of the layered sides up. Either press the end of the strip onto the side of the roll-up to seal it or bring it right into the center of the top layered side and press down with your index finger to “insert” it into the roll-up, creating a hole in it, but only halfway through. Now, using your fingers, begin pushing away from the center of the roll-up to the sides to hollow it out (it should look like a mushroom cap). While you do this, remember to leave the bottom half of the roll-up intact (the layers should be distinct).
+With a spoon, fill the hole with 1 1/2 to 2 tablespoons of the spice filling, packing it gently. Bring the edges of the open end of the bread together and seal to close. You will obtain a stuffed bread.
+Place the bread on a flat surface, sealed side down, and press gently with your hand to flatten it into a 4 to 4 1/2- inch disk, depending on preferred size.
+Continue with the remaining roll-ups in the same manner and place them on the baking sheets, spacing them at least 1 inch apart.<br>
+            Step 7 – Bake the Breads:
+Preheat the oven to 360˚F. Brush the tops of the breads with the egg yolks and sprinkle with Nigella seeds.
+Bake for 40 minutes, or until golden on top, switching the pans halfway through. Remove from the oven. Allow to cool completely before serving.<br>
+            Step 8 – Store the Breads:
+
+Keep the breads in a large covered container, such as a lidded saucepan for about a week. Otherwise, freeze in ziplock backs. When ready to use, defrost at room temperature and, if desired, heat briefly in the oven to bring back the freshness.
+</span>
+<button onclick="showMoreorLess7()" id="showMoreorLessButton7">Show more</button>
+</div>
+	</section>
+
+<section class="hold">
+
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Mix the milk, sugar, salt and rice flour in a pan. Put over a low to medium heat and stir continuously until the mixture thickens.
+Remove from the heat and place on individual dessert plates. Decorate with cinnamon and, if using, butter. Firni is usually served cold, but can also be served hot.
+</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>200 ml/7 fl oz milk</li>
+				<li>50 g/2 oz rice flour</li>
+				<li>25 g/1 oz sugar</li>
+                <li>Cinnamon</li>
+                <li>Pinch of salt</li>
+                <li>Butter (optional)</li>
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>Firni</div>
+            <img src="http://oval.az/wp-content/uploads/2016/03/Rice-pudding-Firni.jpg"></div>
+	</section>
+
+
+<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div class="text">Guymag</div>
+            <img src="https://iamchef.com.ua/wp-content/uploads/2014/10/Puding-s-koritsey-guymag.jpg"></div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Ingredients:
+				<li>100 gr wheat flour</li>
+				<li>100 gr clarified butter</li>
+				<li>900 ml – 1 l water</li>
+                <li>pinch of salt</li>
+                <li>pinch of cinnamon</li>
+                <li>sugar to taste</li>
+                
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>Preparation Method:</h2> <br>Melt the butter in a heavy-bottomed pan and add the flour. Mix well over a medium flame until all the flour has been absorbed by the butter. Keep stirring to prevent the flour from forming lumps. The mixture should be a smooth paste, as in a roux for sauces. Add the salt. Cook until the mixture turns a golden colour. This usually takes around 8-10 minutes.Bring the water to the boil while the flour is still cooking. Add the boiling water gradually to the flour and butter, stirring rapidly all the time to prevent lumps from forming. The flour and water must be blended fully.Cook on a low heat for 40 minutes to 1 hour until a crust forms at the bottom and butter came up . Some of the fat will seep out at the top of the Guymag as it cooks.Serve the Guymag hot on saucers or plates. Sprinkle with cinnamon and sugar.The crust can be scraped from the bottom of the pan and is very tasty sprinkled with sugar.</div>
+	</section>
+
+
+
+
+
+<footer>
+		<div id="container">
+		<div>
+			<ul>General Info
+			<li><a href="Contact_Us.html">Contact us</a></li>
+			<li><a href="About_Us.html">About us</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Contents
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Popular_Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Follow us
+			<li><a href="https://instagram.com/secret_ingredient_20?igshid=1dow9o2zwl1vb"><img class="fllw" src="images/instaLogo.jpg">Instagram</a></li>
+			<li><a href="https://youtube.com/channel/UC9MN9gSSIg8BMfui8kY37_g"><img class="fllw" src="images/youtubeLogo.png">Youtube</a></li>
+		</ul>
+		</div>
+	</div>
+<div id="copy">All rights are reserved by "The Secret Ingredient" Team &copy; 2020</div>
+	</footer>
+</body>
+</html>

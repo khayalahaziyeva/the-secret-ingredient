@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" type="image/png" href="images/iconn.png" sizes="50x50">
+	<title>Restaurants</title>
+	<style>
+		*{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+	/*body{
+		background-color: #CEDAD3;
+	}*/
+	
+	header{
+		/*position: fixed;*/
+		background-color: rgba(240, 209, 204,0.6);
+		width: 100%;
+		height: 50px;
+	}
+	header nav{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		position: absolute;
+		right: 5px;
+		width: 60%;
+		height: 50px;
+	}
+	button, input{
+		background-color: inherit;
+		border-radius: 20px;
+		border: 1px solid grey;
+		padding: 10px;
+		cursor: pointer;
+	}
+	h1{
+		margin: 0 auto 10px auto;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		color: white;
+		background-color: #C9A1E3;
+		width: 100%;
+		height: 40px;
+	}
+	a:link{
+		color: #701D40;
+		text-decoration: none;
+		font-size: 20px;
+	}
+	a:hover{
+		color: #db84db;
+	}
+
+	#leftmenu{
+		margin: 30px 0 20px 30px;
+		display: flex;
+		justify-content: space-between;
+		width: 90%;
+		height: 410px;
+	}
+
+	#sidebar{
+		width: 200px;
+		height: 400px;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		border: 2px solid #C9A1E3;
+		padding: 10px;
+	}
+	#iframe{
+		display: inline-block;
+		height: 450px;
+	}
+
+	.hold{
+		display: flex;
+		justify-content: space-between;
+		margin: 80px 10px 30px 10px;
+		padding: 15px;
+		background-color: #dcb9ed;
+		border: 3px solid #701D40;
+		
+	}
+
+	.image{
+		width: 25%;
+		border: 3px solid #694C70;
+		background-color: white;
+		text-align: center;
+        max-height: 400px;
+        font-size: 20px;
+        text-align: center;
+		font-weight: bold;
+		font-style: italic;
+	}
+        
+        
+        
+        .image img{
+           background-size: cover;
+		height: 90%;
+            width: 90%;
+		margin: 0px 10px; 
+		margin-top: 5px;
+        }
+        
+      
+        
+	.ingredient{
+		width: 25%;
+		border: 3px solid #694C70;
+		padding: 15px;
+		background-color: white;
+        max-height: 400px;
+        overflow-y: auto;
+	}
+
+	.receipt{
+       
+        font-style: italic;
+		width: 40%;
+		border: 3px solid #694C70;
+		padding: 15px;
+		background-color: white;
+        max-height: 400px;
+        overflow-y: auto;
+	}
+        
+	footer{
+		background-color: #F0D1CC;
+		width: 100%;
+		height: 300px;
+	}
+	#container{
+		display: flex;
+		justify-content: space-between;
+		width: 70%;
+		margin: 0 auto;
+	}
+	ul{
+	color: #701D40;
+	font-weight: bold;
+	font-size: 25px;
+	}
+	
+	li{
+		padding-top: 10px;
+		font-size: 20px;
+		list-style: none;
+		font-weight: 10;
+	}
+
+	#copy{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 20px;
+		text-align: center;
+		margin-top: 10px;
+		color: #5A4D5E;
+	}
+	.fllw{
+		display: inline-block;
+		border-radius: 24%;
+		width: 30px;
+		height: 30px;
+		border: none;
+	}
+	.fllw:hover{
+		border-radius: 50%;
+	}
+	</style>
+</head>
+<body>
+	<header id="header">
+		<nav>
+
+			<form>
+			<label for="site_search">Search in the site</label>
+			<input type="search" id="site_search" name="srch" aria-label="Search in the site">
+			<button>Search</button>
+			<input type="submit" value="Submit">
+			</form>
+
+			<a href="index.html">Home</a>
+			<a href="Contact_Us.html">Contact us</a>
+			<a href="About_Us.html">About us</a>
+		</nav>
+	</header>
+
+	<section id="leftmenu">
+		<nav><h1>Contents</h1>
+			<ul id="sidebar">
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</nav>
+	
+
+	<div id="iframe"><img width="900px" height="450px" src="images/restaurant.jpeg"></div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>Shirvanshah</div>
+            <img src="images/unnamed.jpg"></div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Address and Contact:
+				<li>Address:<br>
+                    Nasimi Baku, 1009, Azerbaijan
+                   </li>
+                
+				<li>Contact:<br>
+                    +994125950901
+                </li>
+                
+				
+
+    
+                </li>
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>About This Restaurant:</h2> <br>Baku’s most experiential restaurant doubles as a museum, so while sampling the delights of Azerbaijani cuisine, expect to be taken on a journey through the city’s recent history. This enormous eatery is a veritable labyrinth of rooms and corridors whose core is a converted Medieval hammam, and it features a collection of antiques and curiosities expansive enough to rival an actual history museum. Each dining room has a unique theme, and one entire wing is devoted to the Soviet period – complete with a room kitted out like Lenin’s cabinet. Prices are remarkably reasonable, and booking is essential for evenings.
+
+
+
+
+</div>
+	</section>
+
+	
+    
+    
+    
+    
+    
+    <section class="hold">
+
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>About This Restaurant:</h2> <br>Among Baku’s oldest bistros, Araz Cafe opened in 1953 and for many years serviced a cinema opposite. While it’s fondly remembered among older Bakuvians, for many of whom this was a familiar haunt during the Soviet era, the café also attracts everyone from families and young creatives to travellers with its very convenient Fountains Square location, authentic atmosphere, affordability and speedy service. The menu focusses almost entirely on Azerbaijani cuisine, with a vast selection of dishes such as pilafs, dolmas and qutabs (stuffed pancakes) as well as local beer and wine. Alternatively, come for tea and shisha.</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Addres and Contact:
+				<li>Address:<br>
+                    1 İslam Səfərli, Səbail Bakı, 1000, Azerbaijan
+                </li>
+				<li>Contact:<br>
+                    +994503180207
+                </li>
+
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>Araz Cafe</div>
+            <img src="images/araz-cafe.jpg"></div>
+	</section>
+
+	<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>Darya Fish House</div>
+            <img src="images/derye-fish-house_photo_tom-marsden.jpg"></div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Address and Contact:
+				<li>Address:<br> Namiq Quliyev, Qaradagh Baku, Azerbaijan</li>
+				<li>Contact:<br>+994507534747</li>
+				
+			</ul>
+        </p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>About This Restaurant:</h2> <br>In Baku’s southern Bibiheybət district, a quiet lane snakes down to a string of fish restaurants on the coast of the Caspian Sea. The best known is Dərya Fish House, a three-floor establishment whose clean and simple interior exudes a local feel and offers spectacular sea views. “Mainly, what we have is fish: sea and river fish, fried or prepared on the mangal, as well as local Azerbaijani dishes like buglama [lamb stewed with onions, tomatoes and peppers],” says manager Gunduz Osmanli of the menu, which includes white fish, mullet, pike perch and sturgeon caught daily from the Caspian. Prices are very reasonable; expect to pay no more than 30 Azerbaijani manats (£13.50) per person. There’s also a large playground area for kids and a private stretch of a seaside promenade.</div>
+	</section>
+
+	<section class="hold">
+
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>About This Restaurant:</h2> <br>Nuxa is the historical name of Sheki, a charming city at the foot of the Caucasus Mountains in northwest Azerbaijan famous for its 18th-century old town with a Silk Road-style collection of cobblestone streets, mosques, hammams and caravanserais. And this restaurant brings a touch of all that – with its red-brick interior and dazzling lanterns inspired by Sheki’s famous caravanserai – to an otherwise nondescript area of Baku. “A long time ago, caravans went there, merchants on camels. It was both a hotel and a bazaar,” explains manager Elshad Rasulov. All of the staff are from Sheki, and while the cuisine is more broadly Azerbaijani, it’s a great place to sample dishes from the northwest, such as piti (a mutton and chickpea soup), which is served in a clay pot.
+</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Address and Contact:
+				<li>Address:<br> Məhəmməd Naxçıvani, Nəsimi Bakı, Azerbaijan
+                   </li>
+                
+				<li>Contact:<br>
+                   +994504006611
+                </li>
+                
+				
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>Nuxa</div>
+            <img src="images/nuxa_photo_tom-marsden.jpg"></div>
+	</section>
+
+
+
+
+<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>Chay Bagi 145</div>
+            <img src="images/cay-bagi-145-has-just.jpg"></div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Address and Contact:
+				<li>Address:<br>
+                   3 Kichik Qala, Səbail Bakı, 1000, Azerbaijan</li>
+                <li>
+                   Contact:<br>
+                   +994506000145</li>
+				
+                
+			</ul>
+		</p>
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>About This Restaurant:</h2> <br>Located in the heart of Baku’s Medieval Old City, the fourth floor of Çay Bağı 145 offers unparalleled views of the capital’s oldest and most mysterious landmark, the cylindrical Maiden Tower. “The incredible panorama takes your breath away,” says local food writer Emiliya Aliyeva, who also praises the nods to local culture adorning the restaurant’s interior – expect plenty of colourful Azerbaijani carpets. Çay Bağı 145 (Tea Garden 145) is well worth visiting for a typical tea, jam and sweets experience. Alternatively, come early for a traditional Azerbaijani breakfast: tandir bread with cheeses, honey and a range of omelettes. It also prides itself on having the best shisha in town, and in summer, you can enjoy it seated on the roof of a 15th-century hammam.
+</div>
+	</section>
+
+<section class="hold">
+
+		<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>About This Restaurant:</h2> <br>The restaurant is located on the street with a rich history that begins with the oil boom in the 19th century and lasts until today. The street with the same name Passage has always been the center of trade and culture and one of the most popular places for tourists in the city. "Passage 145" now takes its turn in contributing to the street's history and successfully attracts both foreigner and the local people with its interior full of national elements and diverse cuisine. With an indoor area of 140 m2 and 100m2 on the outdoor terrace, it holds 116 seats. Urban view on busy city center complements well with traditional interior design and various tastes of national and continental breakfasts, refreshing drinks from the tea&coffee bar and delicate desserts
+</div>
+
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Address and Contact:
+				<li>Address: <br> 
+Nigar Rafibeyli St., b37 145 Group, Baku Azerbaijan</li>
+				<li>Contact: <br>+994 51 700 01 45</li>
+				
+			</ul>
+		</p>
+
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>Passage 145</div>
+            <img src="images/passage145.jpg"></div>
+	</section>
+
+
+<section class="hold">
+		<div class="image" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">
+            <div>Sahil Bar & Restaurant</div>
+            <img src="images/Sahil_3.png"></div>
+		<p>
+			<ul class="ingredient" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'">Address and Contact:
+				<li>Address:<br>Neftchilar 34 Seaside Boulevard, Baku 1122 Azerbaijan</li>
+				<li>Contact:<br>+994 50 285 00 22</li>
+				
+                
+			</ul>
+		</p>
+<div class="receipt" onMouseOver="this.style.backgroundColor='#e3c5db'" onMouseOut="this.style.backgroundColor='#fff'"><h2>About This Restaurant:</h2> <br>Sahil is the first contemporary Caspian restaurant of Azerbaijan. The experienced kitchen team prepare superb specialities, balancing classic flavors with creative composition. The specially designed charcoal grill produce just the right level of intense heat to sear the meat perfectly and produce tender, aromatic kebabs.</div>
+	</section>
+
+
+
+
+
+<footer>
+		<div id="container">
+		<div>
+			<ul>General Info
+			<li><a href="Contact_Us.html">Contact us</a></li>
+			<li><a href="About_Us.html">About us</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Contents
+			<li><a href="Main_Meals.html">Main Meals</a></li>
+			<li><a href="Soups.html">Soup</a></li>
+			<li><a href="Desserts.html">Dessert</a></li>
+			<li><a href="Jams.html">Jam</a></li>
+			<li><a href="Chefs.html">Popular Chefs</a></li>
+			<li><a href="Restaurants.html">Popular Restaurants</a></li>
+		</ul>
+		</div>
+
+		<div>
+			<ul>Follow us
+			<li><a href="https://instagram.com/secret_ingredient_20?igshid=1dow9o2zwl1vb"><img class="fllw" src="images/instaLogo.jpg">Instagram</a></li>
+			<li><a href="https://youtube.com/channel/UC9MN9gSSIg8BMfui8kY37_g"><img class="fllw" src="images/youtubeLogo.png">Youtube</a></li>
+		</ul>
+		</div>
+	</div>
+<div id="copy">All rights are reserved by "The Secret Ingredient" Team &copy; 2020</div>
+	</footer>
+</body>
+</html>
